@@ -47,7 +47,7 @@ Naming/AccessorMethodName:
 # 一行の長さは100字まで。コメントは制限しない
 Metrics/LineLength:
   Max: 100
-  IgnoredPatterns: ['\A#']
+  AllowedPatterns: ['\A#']
   Exclude:
     - "db/migrate/*.rb"
 
@@ -55,6 +55,10 @@ Metrics/LineLength:
 Metrics/MethodLength:
   CountComments: false
   Max: 20
+
+# ブロックの行数を35行までにする
+Metrics/BlockLength:
+  Max: 35
 
 # ABC sizeは緩めにする
 Metrics/AbcSize:
