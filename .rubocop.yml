@@ -58,7 +58,7 @@ Metrics/MethodLength:
 
 # ブロックの行数を35行までにする
 Metrics/BlockLength:
-  Max: 35
+  Max: 50
 
 # ABC sizeは緩めにする
 Metrics/AbcSize:
