@@ -78,3 +78,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'solargraph'
 end
+
+gem "dockerfile-rails", ">= 1.2", :group => :development
+
+gem "redis", "~> 5.0"
