@@ -99,6 +99,8 @@ GEM
     concurrent-ruby (1.2.2)
     connection_pool (2.4.0)
     crass (1.0.6)
+    cssbundling-rails (1.1.2)
+      railties (>= 6.0.0)
     date (3.3.3)
     debug (1.7.2)
       irb (>= 1.5.0)
@@ -131,6 +133,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsbundling-rails (1.1.1)
+      railties (>= 6.0.0)
     json (2.6.3)
     kramdown (2.4.0)
       rexml
@@ -333,12 +337,14 @@ DEPENDENCIES
   bootsnap
   bullet
   capybara
+  cssbundling-rails
   debug
   dockerfile-rails (>= 1.2)
   factory_bot_rails
   faker
   importmap-rails
   jbuilder
+  jsbundling-rails
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
