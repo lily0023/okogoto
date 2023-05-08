@@ -123,9 +123,6 @@ GEM
       activesupport (>= 5.0)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.1.6)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     io-console (0.6.0)
     irb (1.6.4)
       reline (>= 0.3.0)
@@ -294,15 +291,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stimulus-rails (1.2.1)
-      railties (>= 6.0.0)
     thor (1.2.1)
     tilt (2.1.0)
     timeout (0.3.2)
-    turbo-rails (1.4.0)
-      actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
-      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
@@ -342,7 +333,6 @@ DEPENDENCIES
   dockerfile-rails (>= 1.2)
   factory_bot_rails
   faker
-  importmap-rails
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
@@ -357,8 +347,6 @@ DEPENDENCIES
   sassc-rails
   solargraph
   sprockets-rails
-  stimulus-rails
-  turbo-rails
   tzinfo-data
   web-console
   webdrivers (~> 5.2)
