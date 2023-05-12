@@ -14,6 +14,7 @@ AllCops:
     - 'node_modules/**/*'
   DisplayCopNames: true
   NewCops: enable
+  SuggestExtensions: false
 
 # 日本語でのコメントを許可
 Style/AsciiComments:
@@ -45,8 +46,8 @@ Naming/AccessorMethodName:
     - "app/controllers/**/*"
 
 # 一行の長さは100字まで。コメントは制限しない
-Metrics/LineLength:
-  Max: 100
+Layout/LineLength:
+  Max: 125
   AllowedPatterns: ['\A#']
   Exclude:
     - "db/migrate/*.rb"
