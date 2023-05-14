@@ -5,11 +5,11 @@
       <%= form_with model: @user, local: true, class: 'flex-col' do |f| %>
         <div class="form-control">
           <%= f.label :email, class: 'label' %>
-          <%= f.email_field :email, class: 'input input-bordered input-primary w-full max-w-xs' %>
+          <%= f.email_field :email, class: 'input input-bordered w-full max-w-xs' %>
         </div>
         <div class="form-control">
           <%= f.label :name, class: 'label' %>
-          <%= f.text_field :name, class: 'input input-bordered input-primary w-full max-w-xs' %>
+          <%= f.text_field :name, class: 'input input-bordered w-full max-w-xs' %>
         </div>
         <div class="form-control">
           <%= f.label :age, class: 'label' %>
@@ -42,6 +42,7 @@
           <%= f.submit '登録する', class: 'btn btn-primary rounded-full' %>
         </div>
       <% end %>
+      <%= link_to 'ログインページへ', login_path, class: 'link link-primary flex justify-center' %>
     </div>
   </div>
 </div>
