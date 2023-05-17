@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+    attributes:
+      user:
+        name: 'ニックネーム'
+        age: '年代'
+        gender: '性別'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        id: 'ID'
+        created_at: '作成日時'
+  enums:
+    user:
+      age:
+        secret: '秘密'
+        teens: '10代'
+        twenties: '20代'
+        thirties: '30代'
+        forties: '40代'
+        older: '50代以上'
+      gender:
+        others: 'その他'
+        male: '男性'
+        female: '女性'

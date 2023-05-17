@@ -1,7 +1,7 @@
 <div class="flex justify-center">
   <div class="card w-96 bg-base-100 shadow-xl mt-10">
     <div class="card-body">
-      <h1 class="card-title justify-center">ユーザー登録</h1>
+      <h1 class="card-title justify-center"><%= t('.title') %></h1>
       <%= form_with model: @user, local: true, class: 'flex-col' do |f| %>
         <div class="form-control">
           <%= f.label :email, class: 'label' %>
@@ -13,21 +13,21 @@
         </div>
         <div class="form-control">
           <%= f.label :age, class: 'label' %>
-          <%= f.select :age, User.ages.keys, {}, class: 'select select-bordered select-sm w-full max-w-xs mb-2' %>
+          <%= f.select :age, User.ages_i18n.invert.to_a, {}, class: 'select select-bordered select-sm w-full max-w-xs mb-2' %>
         </div>
         <div class="form-control space-x-2 space-y-2">
           <%= f.label :gender %>
           <label class="flex justify-start cursor-pointer">
             <%= f.radio_button :gender, :others, class: 'radio checked:bg-red-500 radio-sm', checked: true %>
-            <%= f.label :gender, :others, class: 'label-text font-mono ml-2' %>
+            <%= f.label :gender, User.genders_i18n[:others], class: 'label-text font-mono ml-2' %>
           </label>
           <label class="flex justify-start cursor-pointer">
             <%= f.radio_button :gender, :male, class: 'radio checked:bg-red-500 radio-sm' %>
-            <%= f.label :gender, :male, class: 'label-text font-mono ml-2' %>
+            <%= f.label :gender, User.genders_i18n[:male], class: 'label-text font-mono ml-2' %>
           </label>
           <label class="flex justify-start cursor-pointer ">
             <%= f.radio_button :gender, :female, class: 'radio checked:bg-red-500 radio-sm' %>
-            <%= f.label :gender, :female, class: 'label-text font-mono ml-2' %>
+            <%= f.label :gender, User.genders_i18n[:female], class: 'label-text font-mono ml-2' %>
           </label>
         </div>
         <div class="form-control">
@@ -39,10 +39,10 @@
           <%= f.password_field :password_confirmation, class: 'input input-bordered w-full max-w-xs' %>
         </div>
         <div class="card-actions justify-center mt-3">
-          <%= f.submit '登録する', class: 'btn btn-primary rounded-full' %>
+          <%= f.submit t('.submit'), class: 'btn btn-primary rounded-full' %>
         </div>
       <% end %>
-      <%= link_to 'ログインページへ', login_path, class: 'link link-primary flex justify-center' %>
+      <%= link_to t('.to_login_page'), login_path, class: 'link link-primary flex justify-center' %>
     </div>
   </div>
 </div>
