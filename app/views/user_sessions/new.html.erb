@@ -8,23 +8,23 @@
         <div class="form-control">
           <%= form_with url: login_path, method: :post do |f| %>
             <div class="form-control">
-              <%= f.label :email, class: 'label' %>
+              <%= f.label :email, User.human_attribute_name(:email), class: 'label' %>
               <%= f.email_field :email, class: 'input input-bordered w-full max-w-xs', placeholder: 'email' %>
             </div>
             <div class="form-control">
-              <%= f.label :password, class: 'label' %>
+              <%= f.label :password, User.human_attribute_name(:password), class: 'label' %>
               <%= f.password_field :password, class: 'input input-bordered w-full max-w-xs', placeholder: 'password' %>
             </div>
             <div class="form-control mt-6">
-              <%= f.submit 'ログイン', class: 'btn btn-primary' %>
+              <%= f.submit t('defaults.login'), class: 'btn btn-primary' %>
             </div>
           <% end %>
           <div class="flex justify-between">
             <label class="label">
-              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+              <a href="#" class="label-text-alt link link-hover"><%= t('.password_forget') %></a>
             </label>
             <label class="label">
-              <%= link_to 'Sign up', new_user_path, class: 'label-text-alt link link-hover' %>
+              <%= link_to t('.to_register_page'), new_user_path, class: 'label-text-alt link link-hover' %>
             </label>
           </div>
         </div>
