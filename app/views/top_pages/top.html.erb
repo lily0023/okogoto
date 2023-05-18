@@ -6,6 +6,7 @@
       <%= link_to new_user_path do %>
         <button class="btn btn-accent btn-outline rounded-full">ユーザー登録ページへ</button>
       <% end %>
+      <%= link_to t('defaults.logout'), logout_path, class: 'btn btn-ghost rounded-full', data: { turbo_method: :delete } %>
     </div>
   </div>
 </div>
