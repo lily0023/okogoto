@@ -1,5 +1,5 @@
 <div class="flex justify-center">
-  <div class="card w-96 bg-base-100 shadow-xl mt-10">
+  <div class="card w-96 bg-base-100 shadow-xl">
     <div class="card-body">
       <h1 class="card-title justify-center"><%= t('.title') %></h1>
       <%= form_with model: @user, local: true, class: 'flex-col' do |f| %>
@@ -19,15 +19,15 @@
           <%= f.label :gender %>
           <label class="flex justify-start cursor-pointer">
             <%= f.radio_button :gender, :others, class: 'radio checked:bg-red-500 radio-sm', checked: true %>
-            <%= f.label :gender, User.genders_i18n[:others], class: 'label-text font-mono ml-2' %>
+            <%= f.label :gender, User.genders_i18n[:others], value: :others, class: 'label-text font-mono ml-2 cursor-pointer' %>
           </label>
           <label class="flex justify-start cursor-pointer">
             <%= f.radio_button :gender, :male, class: 'radio checked:bg-red-500 radio-sm' %>
-            <%= f.label :gender, User.genders_i18n[:male], class: 'label-text font-mono ml-2' %>
+            <%= f.label :gender, User.genders_i18n[:male], value: :male, class: 'label-text font-mono ml-2 cursor-pointer' %>
           </label>
           <label class="flex justify-start cursor-pointer ">
             <%= f.radio_button :gender, :female, class: 'radio checked:bg-red-500 radio-sm' %>
-            <%= f.label :gender, User.genders_i18n[:female], class: 'label-text font-mono ml-2' %>
+            <%= f.label :gender, User.genders_i18n[:female], value: :female, class: 'label-text font-mono ml-2 cursor-pointer' %>
           </label>
         </div>
         <div class="form-control">
