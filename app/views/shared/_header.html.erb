@@ -1,0 +1,15 @@
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <%= link_to 'Okogoto', root_path, class: 'btn btn-ghost normal-case text-xl' %>
+  </div>
+  <div class='flex-1 justify-end'>
+    <% if logged_in? %>
+      <%= link_to 'みんなのオコゴトを見る', '#', class: 'btn btn-square btn-ghost whitespace-nowrap flex-auto' %>
+      <%= link_to 'オコゴト画像を作成する', '#', class: 'btn btn-square btn-ghost whitespace-nowrap flex-1' %>
+      <%= link_to 'マイページ', '#', class: 'btn btn-square btn-ghost whitespace-nowrap w-24' %>
+      <%= link_to t('defaults.logout'), logout_path, class: 'btn btn-square btn-ghost whitespace-nowrap w-24', data: { turbo_method: :delete } %>
+    <% else %>
+      <%= link_to t('defaults.login'), login_path, class: 'btn btn-square btn-ghost whitespace-nowrap w-24' %>
+    <% end %>
+  </div>
+</div>
