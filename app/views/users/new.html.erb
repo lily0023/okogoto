@@ -3,6 +3,7 @@
     <div class="card-body">
       <h1 class="card-title justify-center"><%= t('.title') %></h1>
       <%= form_with model: @user, local: true, class: 'flex-col' do |f| %>
+        <%= render 'shared/error_messages', object: @user %>
         <div class="form-control">
           <%= f.label :email, class: 'label' %>
           <%= f.email_field :email, class: 'input input-bordered w-full max-w-xs' %>
