@@ -19,4 +19,8 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
+
+  validates :comment, presence: true, length: { maximum: 500 }
+  validates :kogoto_image, presence: true
+  validates :user_id, presence: true
 end
