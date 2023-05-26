@@ -4,8 +4,8 @@
   </div>
   <div class='flex-1 justify-end'>
     <% if logged_in? %>
-      <%= link_to 'みんなのオコゴトを見る', '#', class: 'btn btn-square btn-ghost whitespace-nowrap flex-auto' %>
-      <%= link_to 'オコゴト画像を作成する', '#', class: 'btn btn-square btn-ghost whitespace-nowrap flex-1' %>
+      <%= link_to 'みんなのオコゴトを見る', posts_path, class: 'btn btn-square btn-ghost whitespace-nowrap flex-auto' %>
+      <%= link_to 'オコゴト画像を作成する', new_okogoto_image_path, class: 'btn btn-square btn-ghost whitespace-nowrap flex-1' %>
       <%= link_to 'マイページ', '#', class: 'btn btn-square btn-ghost whitespace-nowrap w-24' %>
       <%= button_to t('defaults.logout'), logout_path, class: 'btn btn-square btn-ghost whitespace-nowrap w-24', method: :delete %>
     <% else %>

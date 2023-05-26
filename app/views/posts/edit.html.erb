@@ -1,0 +1,19 @@
+<div class="flex justify-center">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
+      <%= t('.created_image') %>
+      <%= image_tag @post.kogoto_image.url %>
+      <%= form_with model: @post, local: true, class: 'flex-col' do |f| %>
+        <div class="form-control">
+          <%= f.label :comment, class: 'label' %>
+          <%= f.text_area :comment, class: 'textarea textarea-bordered', placeholder: '画像をみた感想やこのオコゴトを生んだあなたの経験を教えてください。' %>
+        </div>
+        <div class="card-actions justify-center mt-3">
+          <%= f.submit t('defaults.post_create'), class: 'btn btn-primary rounded-full' %>
+        </div>
+      <% end %>
+      <%= button_to t('.delete_post'), post_path(post), class: 'btn btn-square btn-ghost whitespace-nowrap w-24', method: :delete %>
+    </div>
+  </div>
+</div>
+
