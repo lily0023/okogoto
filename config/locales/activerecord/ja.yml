@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      post: '投稿'
     attributes:
       user:
         name: 'ニックネーム'
@@ -10,6 +11,11 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+        id: 'ID'
+        created_at: '作成日時'
+      post:
+        comment: 'コメント'
+        kogoto_image: 'オコゴト画像'
         id: 'ID'
         created_at: '作成日時'
   enums:

@@ -3,6 +3,8 @@ ja:
     register: '登録'
     login: 'ログイン'
     logout: 'ログアウト'
+    post_create: 'オコゴト画像を投稿する'
+    require_login: 'ログインしてください'
   users:
     new: 
       title: 'ユーザー登録'
@@ -21,3 +23,28 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  posts:
+    index:
+      no_result: '投稿がありません'
+    edit:
+      created_image: '作成したオコゴト画像'
+      delete_post: '画像作成からやり直す'
+    update:
+      success: 'オコゴト画像に説明を追加しました'
+      fail: '説明の追加に失敗しました'
+    show:
+      delete: '投稿を削除する'
+    destroy:
+      success: '投稿を削除しました'
+  okogoto_images:
+    new:
+      title: 'オコゴト画像を作成'
+      image: 'オコゴトの雰囲気を選択'
+      okogoto: 'オコゴト'
+      kakugen: 'まるで格言な雰囲気'
+      kogoto: 'まるで小言な雰囲気'
+      friends: 'まるで友達からの応援な雰囲気'
+      submit: 'オコゴト画像を作成する'
+    create:
+      success: 'オコゴト画像を作成しました'
+      fail: 'オコゴト画像が作成できませんでした'

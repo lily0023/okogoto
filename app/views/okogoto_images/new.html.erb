@@ -1,0 +1,35 @@
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="mx-auto max-w-screen-2xl px-4 md:px-8 flex justify-center">
+    <div class="card w-96 bg-base-100 shadow-xl mb-10">
+      <div class="card-body">
+        <h1 class="card-title justify-center"><%= t('.title') %></h1>
+        <%= form_with url: okogoto_images_path, local: true, class: 'flex-col' do |f| %>
+          <div class="form-control">
+          <div class="form-control mb-4">
+            <%= f.label t('.okogoto'), class: 'label' %>
+            <%= f.text_area :okogoto, class: 'textarea textarea-bordered', placeholder: '70文字以内でオコゴトを入力', maxlength: '70' %>
+          </div>
+          <div class="form-control space-x-2 space-y-2">
+            <%= f.label t('.image') %>
+            <label class="flex justify-start cursor-pointer">
+              <%= f.radio_button :image, 'kakugen', class: 'radio checked:bg-red-500 radio-sm', checked: true %>
+              <%= f.label :image, t('.kakugen'), value: 'kakugen', class: 'label-text font-mono ml-2 cursor-pointer' %>
+            </label>
+            <label class="flex justify-start cursor-pointer">
+              <%= f.radio_button :image, 'kogoto', class: 'radio checked:bg-red-500 radio-sm' %>
+              <%= f.label :image, t('.kogoto'), value: 'kogoto', class: 'label-text font-mono ml-2 cursor-pointer' %>
+            </label>
+            <label class="flex justify-start cursor-pointer ">
+              <%= f.radio_button :image, 'friends', class: 'radio checked:bg-red-500 radio-sm' %>
+              <%= f.label :image, t('.friends'), value: 'friends', class: 'label-text font-mono ml-2 cursor-pointer' %>
+            </label>
+          </div>
+          <div class="card-actions justify-center mt-3">
+            <%= f.submit t('.submit'), class: 'btn btn-primary rounded-full' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

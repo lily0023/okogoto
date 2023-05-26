@@ -1,0 +1,16 @@
+<div class="flex justify-center">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <h3><%= @post.user.name %></h3>
+    <figure class="px-10 pt-10">
+      <%= image_tag @post.kogoto_image.url %>
+    </figure>
+    <div class="card-body items-center text-center">
+      <h3 class="card-title"><%= Post.human_attribute_name('comment') %></h3>
+      <p><%= @post.comment %></p>
+      <%= button_to t('.delete'), post_path(@post),
+                                class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-10',
+                                method: :delete,
+                                data: { turbo_confirm: '投稿を削除しますか？' } %>
+    </div>
+  </div>
+</div>
