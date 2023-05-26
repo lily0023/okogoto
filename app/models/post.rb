@@ -24,5 +24,4 @@ class Post < ApplicationRecord
 
   validates :comment, length: { maximum: 1000 }
   validates :kogoto_image, presence: true
-  validates :user_id, presence: true
 end

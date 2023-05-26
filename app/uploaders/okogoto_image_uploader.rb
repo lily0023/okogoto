@@ -4,9 +4,7 @@ class OkogotoImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.development?
-    storage :file
-  elsif Rails.env.test?
+  if Rails.env.development? || Rails.env.test?
     storage :file
   else
     storage :fog
@@ -41,7 +39,7 @@ class OkogotoImageUploader < CarrierWave::Uploader::Base
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_allowlist
-    %w(jpg png)
+    %w[jpg png]
   end
 
   # Override the filename of the uploaded files:

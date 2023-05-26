@@ -5,11 +5,12 @@ class OkogotoImagesController < ApplicationController
 
   def create
     okogoto = kogoto_params[:okogoto]
-    okogoto_image = if params[:image] == 'kakugen'
+    okogoto_image = case params[:image]
+                    when 'kakugen'
                       KakugenImage.build(okogoto)
-                    elsif params[:image] == 'kogoto'
+                    when 'kogoto'
                       KogotoImage.build(okogoto)
-                    elsif params[:image] == 'friends'
+                    when 'friends'
                       FriendsImage.build(okogoto)
                     end
     @post = current_user.posts.new(kogoto_image: okogoto_image)
@@ -22,7 +23,7 @@ class OkogotoImagesController < ApplicationController
   end
 
   private
-  
+
   def kogoto_params
     params.permit(:okogoto, :image)
   end

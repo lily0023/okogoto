@@ -12,7 +12,12 @@
           <%= f.submit t('defaults.post_create'), class: 'btn btn-primary rounded-full' %>
         </div>
       <% end %>
-      <%= button_to t('.delete_post'), post_path(post), class: 'btn btn-square btn-ghost whitespace-nowrap w-24', method: :delete %>
+      <div class="flex justify-center">
+        <%= button_to t('.delete_post'), post_path(@post),
+                                        class: 'btn btn-outline whitespace-nowrap rounded-full mt-10',
+                                        method: :delete,
+                                        data: { turbo_confirm: '現在のオコゴト画像は削除してもいいですか？' } %>
+      </div>
     </div>
   </div>
 </div>
