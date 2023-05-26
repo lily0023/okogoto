@@ -30,8 +30,8 @@ ja:
       created_image: '作成したオコゴト画像'
       delete_post: '画像作成からやり直す'
     update:
-      success: 'オコゴト画像を投稿しました'
-      fail: 'オコゴト画像の投稿に失敗しました'
+      success: 'オコゴト画像に説明を追加しました'
+      fail: '説明の追加に失敗しました'
     show:
       delete: '投稿を削除する'
     destroy:
