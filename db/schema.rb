@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_223225) do
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "kogoto_image", null: false
-    t.text "comment", null: false
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"

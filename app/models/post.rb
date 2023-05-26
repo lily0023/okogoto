@@ -3,7 +3,7 @@
 # Table name: posts
 #
 #  id           :bigint           not null, primary key
-#  comment      :text             not null
+#  comment      :text
 #  kogoto_image :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
@@ -20,7 +20,9 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  validates :comment, presence: true, length: { maximum: 500 }
+  mount_uploader :kogoto_image, OkogotoImageUploader
+
+  validates :comment, length: { maximum: 1000 }
   validates :kogoto_image, presence: true
   validates :user_id, presence: true
 end
