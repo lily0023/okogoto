@@ -23,9 +23,12 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    if current_path
+    if request.referer&.include?('/posts') && request.referer&.include?('/edit')
+      redirect_to new_okogoto_image_path, status: :see_other
+    else
       flash[:success] = t('.success')
       redirect_to posts_path, status: :see_other
+    end
   end
 
   private
