@@ -3,7 +3,7 @@ class KogotoImage
 
   BASE_IMAGE_PATH = './app/assets/images/okogoto_kogoto.png'.freeze
   GRAVITY = 'center'.freeze
-  TEXT_POSITION = '0,-200'.freeze
+  TEXT_POSITION = '40,-190'.freeze
   FONT = './app/assets/fonts/kanjuku-Gothic.otf'.freeze
   FONT_SIZE = 80
   INDENTION_COUNT = 16
