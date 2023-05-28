@@ -1,14 +1,23 @@
 <div class="flex justify-center">
   <div class="card w-96 bg-base-100 shadow-xl">
-    <h3><%= @post.user.name %></h3>
-    <figure class="px-10 pt-10">
+    <div class="px-10 pt-5">
+      <p class="text-lg text-slate-500"><%= @post.user.name %>(<%= @post.user.age_i18n %><%= @post.user.gender_i18n %>)</p>
+    </div>
+    <figure class="px-10">
       <%= image_tag @post.kogoto_image.url %>
     </figure>
     <div class="card-body items-center text-center">
       <h3 class="card-title"><%= Post.human_attribute_name('comment') %></h3>
       <p><%= @post.comment %></p>
+      <% if @post.tag_id.present? %>
+        <h3 class="card-title"><%= Tag.model_name.human %></h3>
+        <%= link_to "# #{@post.tag.situation}", '#', class: 'link link-accent' %>
+      <% end %>
+      <% if @post.user_id == current_user.id %>
+        <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary whitespace-nowrap rounded-full text-center mt-10' %>
+      <% end %>
       <%= button_to t('.delete'), post_path(@post),
-                                class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-10',
+                                class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-2',
                                 method: :delete,
                                 data: { turbo_confirm: '投稿を削除しますか？' } %>
     </div>

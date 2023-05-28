@@ -22,7 +22,7 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  belongs_to :tag
+  belongs_to :tag, optional: true
 
   mount_uploader :kogoto_image, OkogotoImageUploader
 

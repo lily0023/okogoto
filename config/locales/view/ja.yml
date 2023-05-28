@@ -29,10 +29,12 @@ ja:
     edit:
       created_image: '作成したオコゴト画像'
       delete_post: '画像作成からやり直す'
+      tag: 'どんな時に生まれたオコゴトですか？'
     update:
       success: 'オコゴト画像に説明を追加しました'
       fail: '説明の追加に失敗しました'
     show:
+      edit: '投稿を編集する'
       delete: '投稿を削除する'
     destroy:
       success: '投稿を削除しました'

@@ -3,6 +3,7 @@ ja:
     models:
       user: 'ユーザー'
       post: '投稿'
+      tag: 'タグ'
     attributes:
       user:
         name: 'ニックネーム'

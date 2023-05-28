@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
   def index
-    @posts = Post.all.includes(:user).order(created_at: :desc)
+    @posts = Post.all.includes(:user, :tag).order(created_at: :desc)
   end
 
   def show
     @post = Post.find(params[:id])
   end
 
-  def edit; end
+  def edit
+    @tags = Tag.all
+  end
 
   def update
     if @post.update(post_params)
@@ -21,13 +23,15 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    redirect_to posts_path, flash: { success: t('.success') }
+    if current_path
+      flash[:success] = t('.success')
+      redirect_to posts_path, status: :see_other
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:comment)
+    params.require(:post).permit(:comment, :tag_id)
   end
 
   def set_post
