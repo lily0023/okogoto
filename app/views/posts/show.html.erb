@@ -15,11 +15,11 @@
       <% end %>
       <% if @post.user_id == current_user.id %>
         <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary whitespace-nowrap rounded-full text-center mt-10' %>
+        <%= button_to t('.delete'), post_path(@post),
+                                  class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-2',
+                                  method: :delete,
+                                  data: { turbo_confirm: '投稿を削除しますか？' } %>
       <% end %>
-      <%= button_to t('.delete'), post_path(@post),
-                                class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-2',
-                                method: :delete,
-                                data: { turbo_confirm: '投稿を削除しますか？' } %>
     </div>
   </div>
 </div>
