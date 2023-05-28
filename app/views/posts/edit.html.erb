@@ -8,13 +8,15 @@
           <%= f.label :comment, class: 'label' %>
           <%= f.text_area :comment, class: 'textarea textarea-bordered', placeholder: '画像をみた感想やこのオコゴトを生んだあなたの経験を教えてください。' %>
         </div>
+        <%= f.label :tag_id, Tag.model_name.human, class: 'label' %>
+        <%= f.collection_select(:tag_id, @tags, :id, :situation, { prompt: t('.tag') }, { class: 'select select-bordered select-sm w-full max-w-xs mb-2' }) %>
         <div class="card-actions justify-center mt-3">
           <%= f.submit t('defaults.post_create'), class: 'btn btn-primary rounded-full' %>
         </div>
       <% end %>
       <div class="flex justify-center">
         <%= button_to t('.delete_post'), post_path(@post),
-                                        class: 'btn btn-outline whitespace-nowrap rounded-full mt-10',
+                                        class: 'btn btn-outline whitespace-nowrap rounded-full mt-2',
                                         method: :delete,
                                         data: { turbo_confirm: '現在のオコゴト画像は削除してもいいですか？' } %>
       </div>
