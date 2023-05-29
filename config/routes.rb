@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  resources :posts
   resources :okogoto_images, only: %i[new create]
+  resources :posts do
+    resources :likes, only: %i[create destroy]
+  end
 end

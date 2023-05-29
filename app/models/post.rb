@@ -23,6 +23,8 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :tag, optional: true
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes
 
   mount_uploader :kogoto_image, OkogotoImageUploader
 
