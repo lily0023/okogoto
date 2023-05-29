@@ -2,6 +2,6 @@
   <%= image_tag post.kogoto_image.url, class: 'absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110' %>
   <div class="relative flex flex-col">
     <span class="text-gray-300"><%= post.user.name %>(<%= post.user.age_i18n %><%= post.user.gender_i18n %>)</span>
-    <span class="text-lg font-semibold text-white lg:text-xl"><%= post.created_at %></span>
+    <span class="text-lg font-semibold text-white lg:text-xl"><%= l post.created_at, format: :date %></span>
   </div>
 <% end %>

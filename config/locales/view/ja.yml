@@ -6,6 +6,11 @@ ja:
     post_create: 'オコゴト画像を投稿する'
     require_login: 'ログインしてください'
     search_tag: 'タグで検索する'
+  time:
+    formats:
+      default: '%Y/%m/%d %H:%M:%S'
+      short: '%m/%d %H:%M'
+      date: '%Y/%m/%d'
   users:
     new: 
       title: 'ユーザー登録'
