@@ -11,7 +11,7 @@
       <p><%= @post.comment %></p>
       <% if @post.tag_id.present? %>
         <h3 class="card-title"><%= Tag.model_name.human %></h3>
-        <%= link_to "# #{@post.tag.situation}", '#', class: 'link link-accent' %>
+        <%= link_to "# #{@post.tag.situation}", posts_path( search: { tag_id: @post.tag_id }), class: 'link link-accent' %>
       <% end %>
       <% if @post.user_id == current_user.id %>
         <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary whitespace-nowrap rounded-full text-center mt-10' %>
