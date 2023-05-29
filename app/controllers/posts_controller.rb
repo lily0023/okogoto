@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
   def index
     @tags = Tag.all
-    @posts =  if search_params.present?
+    @posts =  if search_params[:tag_id].present?
                 Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag).order(created_at: :desc)
               else
                 Post.all.includes(:user, :tag).order(created_at: :desc)
