@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
   def index
-    @posts = Post.all.includes(:user, :tag).order(created_at: :desc)
+    @tags = Tag.all
+    @posts =  if search_params.present?
+                Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag).order(created_at: :desc)
+              else
+                Post.all.includes(:user, :tag).order(created_at: :desc)
+              end
   end
 
   def show
@@ -35,6 +40,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:comment, :tag_id)
+  end
+
+  def search_params
+    params.fetch(:search, {}).permit(:tag_id)
   end
 
   def set_post

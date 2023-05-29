@@ -5,6 +5,7 @@ ja:
     logout: 'ログアウト'
     post_create: 'オコゴト画像を投稿する'
     require_login: 'ログインしてください'
+    search_tag: 'タグで検索する'
   users:
     new: 
       title: 'ユーザー登録'
@@ -25,7 +26,8 @@ ja:
       success: 'ログアウトしました'
   posts:
     index:
-      no_result: '投稿がありません'
+      no_result: '最初のオコゴトを投稿してみませんか？'
+      search_tag: 'どんな状況のオコゴトを見てみますか？'
     edit:
       created_image: '作成したオコゴト画像'
       delete_post: '画像作成からやり直す'
