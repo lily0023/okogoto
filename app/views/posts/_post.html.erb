@@ -1,7 +1,10 @@
 <%= link_to post_path(post), class: 'group relative flex h-80 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg' do %>
   <%= image_tag post.kogoto_image.url, class: 'absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110' %>
   <div class="relative flex flex-col">
-    <span class="text-gray-300"><%= post.user.name %>(<%= post.user.age_i18n %><%= post.user.gender_i18n %>)</span>
-    <span class="text-lg font-semibold text-white lg:text-xl"><%= l post.created_at, format: :date %></span>
+    <div class="text-gray-200"><%= post.user.name %>(<%= post.user.age_i18n %><%= post.user.gender_i18n %>)</div>
+    <div class="text-lg font-semibold text-white lg:text-xl"><%= l post.created_at, format: :short %></div>
+    <div class="chat chat-start">
+      <div class="chat-bubble bg-base-200 text-gray-400"><i class="fa-regular fa-face-smile mr-1"></i><%= post.likes.size %></div>
+    </div>
   </div>
 <% end %>

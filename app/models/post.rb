@@ -30,4 +30,8 @@ class Post < ApplicationRecord
 
   validates :comment, length: { maximum: 1000 }
   validates :kogoto_image, presence: true
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 end

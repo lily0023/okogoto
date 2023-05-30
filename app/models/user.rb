@@ -35,4 +35,8 @@ class User < ApplicationRecord
 
   enum age: { secret: 0, teens: 1, twenties: 2, thirties: 3, forties: 4, older: 5 }
   enum gender: { others: 0, male: 1, female: 2 }
+
+  def like_post?(post)
+    like_posts.include?(post)
+  end
 end
