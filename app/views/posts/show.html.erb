@@ -13,8 +13,15 @@
         <h3 class="card-title"><%= Tag.model_name.human %></h3>
         <%= link_to "# #{@post.tag.situation}", posts_path( search: { tag_id: @post.tag_id }), class: 'link link-accent' %>
       <% end %>
+    </div>
+    <div class="flex justify-around">
+      <%= turbo_frame_tag 'like_button' do %>
+        <%= render 'like_button', post: @post %>
+      <% end %>
+    </div>
+    <div class="items-center text-center mb-4">
       <% if @post.user_id == current_user.id %>
-        <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary whitespace-nowrap rounded-full text-center mt-10' %>
+        <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary whitespace-nowrap rounded-full text-center mt-4' %>
         <%= button_to t('.delete'), post_path(@post),
                                   class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-2',
                                   method: :delete,
