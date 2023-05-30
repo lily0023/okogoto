@@ -31,18 +31,22 @@ ja:
       success: 'ログアウトしました'
   posts:
     index:
+      title: 'みんなのオコゴト'
       no_result: '最初のオコゴトを投稿してみませんか？'
       search_tag: 'どんな状況のオコゴトを見てみますか？'
     edit:
       created_image: '作成したオコゴト画像'
       delete_post: '画像作成からやり直す'
       tag: 'どんな時に生まれたオコゴトですか？'
+      comment: '画像をみた感想やこのオコゴトを生んだあなたの経験を教えてください。'
+      delete_check: '現在のオコゴト画像は削除してもいいですか？'
     update:
       success: 'オコゴト画像に説明を追加しました'
       fail: '説明の追加に失敗しました'
     show:
       edit: '投稿を編集する'
       delete: '投稿を削除する'
+      delete_check: '投稿を削除しますか？'
     destroy:
       success: '投稿を削除しました'
   okogoto_images:

@@ -4,6 +4,7 @@ ja:
       user: 'ユーザー'
       post: '投稿'
       tag: 'タグ'
+      like: 'わかる'
     attributes:
       user:
         name: 'ニックネーム'

@@ -6,7 +6,7 @@
       <%= form_with model: @post, local: true, class: 'flex-col' do |f| %>
         <div class="form-control">
           <%= f.label :comment, class: 'label' %>
-          <%= f.text_area :comment, class: 'textarea textarea-bordered', placeholder: '画像をみた感想やこのオコゴトを生んだあなたの経験を教えてください。' %>
+          <%= f.text_area :comment, class: 'textarea textarea-bordered', placeholder: t('.comment') %>
         </div>
         <%= f.label :tag_id, Tag.model_name.human, class: 'label' %>
         <%= f.collection_select(:tag_id, @tags, :id, :situation, { prompt: t('.tag') }, { class: 'select select-bordered select-sm w-full max-w-xs mb-2' }) %>
@@ -18,7 +18,7 @@
         <%= button_to t('.delete_post'), post_path(@post),
                                         class: 'btn btn-outline whitespace-nowrap rounded-full mt-2',
                                         method: :delete,
-                                        data: { turbo_confirm: '現在のオコゴト画像は削除してもいいですか？' } %>
+                                        data: { turbo_confirm: t('.delete_check') } %>
       </div>
     </div>
   </div>
