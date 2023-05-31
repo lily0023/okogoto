@@ -7,7 +7,7 @@
 <% else %>
   <%= link_to post_likes_path(post), data: { turbo_method: :post } do %>
     <div class="tooltip tooltip-open tooltip-right tooltip-primary" data-tip="<%= post.likes.count %>">
-      <button class="btn btn-sm btn-outline btn-primary"><i class="fa-regular fa-face-smile"></i><%= Like.model_name.human %></button>
+      <button class="btn btn-sm btn-outline btn-primary"><i class="fa-regular fa-face-smile mr-1"></i><%= Like.model_name.human %></button>
     </div>
   <% end %>
 <% end %>

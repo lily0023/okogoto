@@ -1,3 +1,9 @@
+<% set_meta_tags( og: { title: "#{@post.user.name}さんの作成したオコゴト画像",
+                        image: @post.kogoto_image.url },
+                  twitter: {
+                        card: 'summary_large_image',
+                        title: "#{@post.user.name}さんの作成したオコゴト画像",
+                        image: @post.kogoto_image.url }) %>
 <div class="flex justify-center">
   <div class="card w-96 bg-base-100 shadow-xl my-12">
     <div class="px-10 pt-5">
@@ -6,6 +12,7 @@
     <figure class="px-10">
       <%= image_tag @post.kogoto_image.url %>
     </figure>
+    <div class="text-right text-gray-400 pr-10"><%= l @post.created_at, format: :short %></div>
     <div class="card-body items-center text-center">
       <h3 class="card-title"><%= Post.human_attribute_name('comment') %></h3>
       <p><%= @post.comment %></p>
@@ -15,6 +22,9 @@
       <% end %>
     </div>
     <div class="flex justify-around">
+      <%= link_to "https://twitter.com/share?hashtags=okogoto,オコゴト" do %>
+        <button class="btn btn-sm btn-outline bg-[#1da1f2] text-white"><i class="fa-brands fa-twitter mr-1"></i>tweet</button>
+      <% end %>
       <%= turbo_frame_tag 'like_button' do %>
         <%= render 'like_button', post: @post %>
       <% end %>
