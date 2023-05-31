@@ -2,7 +2,7 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: 'Okogoto',
-      title: 'Okogoto - あなたの小言、イメチェンしませんか？オコゴト画像作成サービス',
+      title: 'あなたの小言、イメチェンしませんか？オコゴト画像作成サービス',
       reverse: true,
       charset: 'utf-8',
       description: 'Okogotoでは背景やフォントを使って雰囲気を変え、小言を客観的に見ることをお手伝いします！',
@@ -20,7 +20,7 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        creator: '@cherry_00023',
+        site: '@cherry_00023',
       }
     }
   end

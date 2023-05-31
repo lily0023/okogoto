@@ -2,9 +2,7 @@
                         image: @post.kogoto_image.url,
                         url: "https://okogoto.net/posts/#{@post.id}" },
                   twitter: {
-                        card: 'summary_large_image',
-                        title: "#{@post.user.name}さんの作成したオコゴト画像",
-                        image: @post.kogoto_image.url }) %>
+                        card: 'summary_large_image' }) %>
 <div class="flex justify-center">
   <div class="card w-96 bg-base-100 shadow-xl my-12">
     <div class="px-10 pt-5">
@@ -23,7 +21,7 @@
       <% end %>
     </div>
     <div class="flex justify-around">
-      <%= link_to "https://twitter.com/share?hashtags=okogoto,オコゴト" do %>
+      <%= link_to "https://twitter.com/share?text=#{@post.user.name}さんのオコゴト%0A%20%23okogoto%20%23オコゴト%0A&url=https://okogoto.net/posts/#{@post.id}", target: '_blank' do %>
         <button class="btn btn-sm btn-outline bg-[#1da1f2] text-white"><i class="fa-brands fa-twitter mr-1"></i>tweet</button>
       <% end %>
       <%= turbo_frame_tag 'like_button' do %>

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :require_login, only: %i[index show]
   before_action :set_post, only: %i[edit update destroy]
   def index
     @tags = Tag.all
