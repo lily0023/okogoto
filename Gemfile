@@ -95,8 +95,5 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'solargraph'
+  gem 'letter_opener'
 end
-
-# gem 'dockerfile-rails', '>= 1.2', group: :development
-
-# gem 'redis', '~> 5.0'
