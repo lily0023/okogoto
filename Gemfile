@@ -54,11 +54,11 @@ gem 'enum_help'
 gem 'rails-i18n', '~> 7.0.0'
 
 # kogoto画像作成
+gem 'aws-sdk-s3', require: false
 gem 'carrierwave'
+gem 'dotenv-rails'
 gem 'fog-aws'
 gem 'mini_magick'
-gem 'aws-sdk-s3', require: false
-gem 'dotenv-rails'
 
 # Twitterシェア
 gem 'meta-tags'

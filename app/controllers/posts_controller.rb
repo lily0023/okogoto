@@ -4,17 +4,17 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show download]
   def index
     @tags = Tag.all
-    @posts =  if search_params[:tag_id].present?
-                Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag).order(created_at: :desc)
-              else
-                Post.all.includes(:user, :tag).order(created_at: :desc)
-              end
+    @posts = if search_params[:tag_id].present?
+               Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag).order(created_at: :desc)
+             else
+               Post.all.includes(:user, :tag).order(created_at: :desc)
+             end
   end
 
   def show; end
 
   def download
-    data = File.open(@post.kogoto_image.path, 'r')
+    data = File.open("s3://okogoto/#{@post.kogoto_image_url}", 'r')
     send_data data.read, filename: 'okogoto.png'
   end
 

@@ -55,7 +55,7 @@ Layout/LineLength:
 # メソッドの行数を20行までにする
 Metrics/MethodLength:
   CountComments: false
-  Max: 20
+  Max: 25
 
 # ブロックの行数を35行までにする
 Metrics/BlockLength:

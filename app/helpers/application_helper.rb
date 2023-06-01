@@ -20,7 +20,7 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@cherry_00023',
+        site: '@cherry_00023'
       }
     }
   end
