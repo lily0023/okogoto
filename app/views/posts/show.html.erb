@@ -1,15 +1,23 @@
 <% set_meta_tags( og: { title: "#{@post.user.name}さんの作成したオコゴト画像",
-                        image: @post.kogoto_image.url,
+                        image: @post.kogoto_image_url,
                         url: "https://okogoto.net/posts/#{@post.id}" },
-                  twitter: {
-                        card: 'summary_large_image' }) %>
+                  twitter: { card: 'summary_large_image' }) %>
 <div class="flex justify-center">
   <div class="card w-96 bg-base-100 shadow-xl my-12">
-    <div class="px-10 pt-5">
-      <p class="text-lg text-slate-500"><%= @post.user.name %>(<%= @post.user.age_i18n %><%= @post.user.gender_i18n %>)</p>
+    <div class="flex justify-around">
+      <p class="text-lg text-slate-400 pt-2"><%= @post.user.name %>(<%= @post.user.age_i18n %><%= @post.user.gender_i18n %>)</p>
+      <% if current_user %>
+        <div class="dropdown dropdown-right dropdown-end">
+          <label tabindex="0" class="btn btn-ghost"><i class="fa-regular fa-circle-down text-slate-400"></i></label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-64 whitespace-nowrap">
+              <li><%= link_to 'オコゴト画像をダウンロード', download_post_path(@post), data: { turbolinks: false }, method: :get %></li>
+              <li><%= button_to '壁紙verをダウンロード', '#' %></li>
+            </ul>
+        </div>
+      <% end %>
     </div>
     <figure class="px-10">
-      <%= image_tag @post.kogoto_image.url %>
+      <%= image_tag @post.kogoto_image_url %>
     </figure>
     <div class="text-right text-gray-400 pr-10"><%= l @post.created_at, format: :short %></div>
     <div class="card-body items-center text-center">
@@ -20,22 +28,24 @@
         <%= link_to "# #{@post.tag.situation}", posts_path( search: { tag_id: @post.tag_id }), class: 'link link-accent' %>
       <% end %>
     </div>
-    <div class="flex justify-around">
-      <%= link_to "https://twitter.com/share?text=#{@post.user.name}さんのオコゴト%0A%20%23okogoto%20%23オコゴト%0A&url=https://okogoto.net/posts/#{@post.id}", target: '_blank' do %>
-        <button class="btn btn-sm btn-outline bg-[#1da1f2] text-white"><i class="fa-brands fa-twitter mr-1"></i>tweet</button>
-      <% end %>
-      <%= turbo_frame_tag 'like_button' do %>
-        <%= render 'like_button', post: @post %>
-      <% end %>
-    </div>
-    <div class="items-center text-center mb-4">
-      <% if @post.user_id == current_user.id %>
-        <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary whitespace-nowrap rounded-full text-center mt-4' %>
-        <%= button_to t('.delete'), post_path(@post),
-                                  class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-2',
-                                  method: :delete,
-                                  data: { turbo_confirm: t('.delete_check') } %>
-      <% end %>
-    </div>
+    <% if current_user %>
+      <div class="flex justify-around">
+        <%= link_to "https://twitter.com/share?text=#{@post.user.name}さんのオコゴト%0a%20%23Okogoto%20%23オコゴト%0a&url=https://okogoto.net/posts/#{@post.id}", target: '_blank' do %>
+          <button class="btn btn-sm btn-outline bg-[#1da1f2] text-white"><i class="fa-brands fa-twitter mr-1"></i>tweet</button>
+        <% end %>
+        <%= turbo_frame_tag 'like_button' do %>
+          <%= render 'like_button', post: @post %>
+        <% end %>
+      </div>
+      <div class="items-center text-center mb-4">
+        <% if @post.user_id == current_user.id %>
+          <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary whitespace-nowrap rounded-full text-center mt-4' %>
+          <%= button_to t('.delete'), post_path(@post),
+                                    class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-2',
+                                    method: :delete,
+                                    data: { turbo_confirm: t('.delete_check') } %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
