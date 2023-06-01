@@ -7,8 +7,8 @@
         <div class="input-group justify-center">
           <%= form_with scope: :search, url: posts_path, method: :get, local: true do |f| %>
             <%= f.label :tag_id, t('defaults.search_tag'), class: 'label text-slate-500 text-sm' %>
-            <%= f.collection_select(:tag_id, @tags, :id, :situation, { include_blank: t('.search_tag') }, { class: 'select select-bordered' }) %>
-            <%= f.button class: 'btn btn-square' do %>
+            <%= f.collection_select(:tag_id, @tags, :id, :situation, { include_blank: t('.search_tag') }, { class: 'select join-item' }) %>
+            <%= f.button class: 'btn join-item' do %>
               <i class="fa-solid fa-magnifying-glass fa-lg"></i>
             <% end %>
           <% end %>
