@@ -29,6 +29,18 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  profiles:
+    show:
+      title: 'マイページ'
+      edit_profile: 'プロフィールを編集する'
+    edit:
+      title: 'プロフィール編集'
+      submit: 'プロフィールを更新する'
+      to_my_page: 'マイページへ戻る'
+      back_check: '更新内容は保存されません。マイページにもどりますか？'
+    update:
+      success: 'プロフィールを更新しました'
+      fail: 'プロフィールを更新に失敗しました'
   posts:
     index:
       title: 'みんなのオコゴト'

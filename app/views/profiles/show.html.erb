@@ -1,0 +1,37 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-6">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"><%= t('.title') %></h1>
+    </div>
+    <div class="flex md:w-1/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 py-2 items-end">
+      <div class="relative flex-grow w-full">
+        <h3 class="text-md text-sky-600 whitespace-nowrap ml-4"><%= User.human_attribute_name('name') %></h3>
+      </div>
+      <div class="relative flex-grow w-full">
+        <h3 class="text-2xl text-sky-600 whitespace-nowrap ml-6"><%= @user.name %></h3>
+      </div>
+    </div>
+    <div class="flex md:w-1/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 py-2 items-end">
+      <div class="relative flex-grow w-full">
+        <h3 class="text-md text-sky-600 whitespace-nowrap ml-4"><%= User.human_attribute_name('age') %></h3>
+      </div>
+      <div class="relative flex-grow w-full">
+        <h3 class="text-2xl text-sky-600 whitespace-nowrap ml-6"><%= @user.age_i18n %></h3>
+      </div>
+    </div>
+    <div class="flex md:w-1/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 py-2 items-end">
+      <div class="relative flex-grow w-full">
+        <h3 class="text-md text-sky-600 whitespace-nowrap ml-4"><%= User.human_attribute_name('gender') %></h3>
+      </div>
+      <div class="relative flex-grow w-full">
+        <h3 class="text-2xl text-sky-600 whitespace-nowrap ml-6"><%= @user.gender_i18n %></h3>
+      </div>
+    </div>
+    <div class="flex justify-center mt-4">
+      <%= link_to t('.edit_profile'), edit_profile_path, class: 'btn rounded-full' %>
+    </div>
+    <% if @posts.present? %>
+      <%= render partial: 'my_posts', collection: @posts, as: :item %>
+    <% end %>
+  </div>
+</section>
