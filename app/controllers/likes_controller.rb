@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   before_action :set_post
   def create
-    like = current_user.likes.create!(post_id: @post.id)
+    current_user.likes.create!(post_id: @post.id)
     redirect_to post_path(@post)
   end
 
