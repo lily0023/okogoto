@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def show; end
 
   def download
-    data = File.open("s3://okogoto/#{@post.kogoto_image_url}", 'r')
+    data = URI.open("https://okogoto.s3.ap-northeast-1.amazonaws.com/#{@post.kogoto_image.path}", 'r')
     send_data data.read, filename: 'okogoto.png'
   end
 
