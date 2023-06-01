@@ -14,7 +14,8 @@ class PostsController < ApplicationController
   def show; end
 
   def download
-    send_file @post.kogoto_image.path, filename: 'okogoto.png'
+    data = File.open(@post.kogoto_image.path, 'r')
+    send_data data.read, filename: 'okogoto.png'
   end
 
   def edit
