@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
-  before_action :set_post, only: %i[edit update destroy]
+  before_action :set_my_post, only: %i[edit update destroy]
+  before_action :set_post, only: %i[show download]
   def index
     @tags = Tag.all
     @posts =  if search_params[:tag_id].present?
@@ -10,8 +11,10 @@ class PostsController < ApplicationController
               end
   end
 
-  def show
-    @post = Post.find(params[:id])
+  def show; end
+
+  def download
+    send_file @post.kogoto_image.path, filename: 'okogoto.png'
   end
 
   def edit
@@ -47,7 +50,11 @@ class PostsController < ApplicationController
     params.fetch(:search, {}).permit(:tag_id)
   end
 
-  def set_post
+  def set_my_post
     @post = current_user.posts.find(params[:id])
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

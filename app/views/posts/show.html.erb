@@ -4,8 +4,17 @@
                   twitter: { card: 'summary_large_image' }) %>
 <div class="flex justify-center">
   <div class="card w-96 bg-base-100 shadow-xl my-12">
-    <div class="px-10 pt-5">
-      <p class="text-lg text-slate-500"><%= @post.user.name %>(<%= @post.user.age_i18n %><%= @post.user.gender_i18n %>)</p>
+    <div class="flex justify-around">
+      <p class="text-lg text-slate-400 pt-2"><%= @post.user.name %>(<%= @post.user.age_i18n %><%= @post.user.gender_i18n %>)</p>
+      <% if current_user %>
+        <div class="dropdown dropdown-right dropdown-end">
+          <label tabindex="0" class="btn btn-ghost"><i class="fa-regular fa-circle-down text-slate-400"></i></label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-64 whitespace-nowrap">
+              <li><%= link_to 'オコゴト画像をダウンロード', download_post_path(@post), data: { turbolinks: false }, method: :get %></li>
+              <li><%= button_to '壁紙verをダウンロード', '#' %></li>
+            </ul>
+        </div>
+      <% end %>
     </div>
     <figure class="px-10">
       <%= image_tag @post.kogoto_image_url %>

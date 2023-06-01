@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   resources :okogoto_images, only: %i[new create]
   resources :posts do
     resources :likes, only: %i[create destroy]
+    member do
+      get 'download'
+    end
   end
 end
