@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
+  resources :password_resets, only: %i[create edit update]
+
   resources :okogoto_images, only: %i[new create]
   resources :posts do
     resources :likes, only: %i[create destroy]
@@ -18,4 +20,6 @@ Rails.application.routes.draw do
       get 'download'
     end
   end
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

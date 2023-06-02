@@ -6,6 +6,9 @@ ja:
     post_create: 'オコゴト画像を投稿する'
     require_login: 'ログインしてください'
     search_tag: 'タグで検索する'
+    reset_password: 'パスワードの変更申請を受け付けました'
+    send_mail: '送信'
+    submit: '登録する'
   time:
     formats:
       default: '%Y/%m/%d %H:%M:%S'
@@ -22,8 +25,9 @@ ja:
   user_sessions:
     new:
       title: 'ログイン'
+      create_user: '新しくアカウントを作成する'
       to_register_page: '登録ページへ'
-      password_forget: 'パスワードをお忘れの方はこちら'
+      password_forget: 'パスワードをお忘れですか？'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
@@ -73,3 +77,12 @@ ja:
     create:
       success: 'オコゴト画像を作成しました'
       fail: 'オコゴト画像が作成できませんでした'
+  password_resets:
+    create:
+      success: 'メールを送信しました！'
+    edit:
+      title: 'パスワード変更フォーム'
+      submit: '変更する'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'
