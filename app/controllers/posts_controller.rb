@@ -5,9 +5,9 @@ class PostsController < ApplicationController
   def index
     @tags = Tag.all
     @posts = if search_params[:tag_id].present?
-               Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag).order(created_at: :desc)
+               Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag, :likes).order(created_at: :desc)
              else
-               Post.all.includes(:user, :tag).order(created_at: :desc)
+               Post.all.includes(:user, :tag, :likes).order(created_at: :desc)
              end
   end
 
