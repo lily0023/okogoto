@@ -23,6 +23,17 @@
               <%= f.label :image, t('.friends'), value: 'friends', class: 'label-text font-mono ml-2 cursor-pointer' %>
             </label>
           </div>
+          <div class="carousel carousel-center rounded-box mt-4">
+            <div class="carousel-item">
+              <%= image_tag 'okogoto_kakugen.png', size: '320x200' %>
+            </div> 
+            <div class="carousel-item">
+              <%= image_tag 'okogoto_kogoto.png', size: '320x200' %>
+            </div> 
+            <div class="carousel-item">
+              <%= image_tag 'okogoto_friends.png', size: '320x200' %>
+            </div> 
+          </div>
           <div class="card-actions justify-center mt-3">
             <%= f.submit t('.submit'), class: 'btn btn-primary rounded-full' %>
           </div>
