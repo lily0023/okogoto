@@ -5,7 +5,7 @@ class KogotoImage
   GRAVITY = 'center'.freeze
   TEXT_POSITION = '30,-70'.freeze
   FONT = './app/assets/fonts/kanjuku-Gothic.otf'.freeze
-  FONT_SIZE = 70
+  FONT_SIZE = 75
   INDENTION_COUNT = 16
   ROW_LIMIT = 5
 

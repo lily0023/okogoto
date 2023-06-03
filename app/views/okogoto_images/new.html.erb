@@ -4,10 +4,9 @@
       <div class="card-body">
         <h1 class="card-title justify-center"><%= t('.title') %></h1>
         <%= form_with url: okogoto_images_path, local: true, class: 'flex-col' do |f| %>
-          <div class="form-control">
           <div class="form-control mb-4">
             <%= f.label t('.okogoto'), class: 'label' %>
-            <%= f.text_area :okogoto, class: 'textarea textarea-bordered', placeholder: '70文字以内でオコゴトを入力', maxlength: '70' %>
+            <%= f.text_area :okogoto, class: 'textarea textarea-bordered', placeholder: '70文字以内で入力してください（ 70文字以上入力されません ）', maxlength: '70' %>
           </div>
           <div class="form-control space-x-2 space-y-2">
             <%= f.label t('.image') %>
@@ -23,6 +22,17 @@
               <%= f.radio_button :image, 'friends', class: 'radio checked:bg-red-500 radio-sm' %>
               <%= f.label :image, t('.friends'), value: 'friends', class: 'label-text font-mono ml-2 cursor-pointer' %>
             </label>
+          </div>
+          <div class="carousel carousel-center rounded-box mt-4">
+            <div class="carousel-item">
+              <%= image_tag 'okogoto_kakugen.png', size: '320x200' %>
+            </div> 
+            <div class="carousel-item">
+              <%= image_tag 'okogoto_kogoto.png', size: '320x200' %>
+            </div> 
+            <div class="carousel-item">
+              <%= image_tag 'okogoto_friends.png', size: '320x200' %>
+            </div> 
           </div>
           <div class="card-actions justify-center mt-3">
             <%= f.submit t('.submit'), class: 'btn btn-primary rounded-full' %>

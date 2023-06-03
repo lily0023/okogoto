@@ -9,6 +9,8 @@ ja:
     reset_password: 'パスワードの変更申請を受け付けました'
     send_mail: '送信'
     submit: '登録する'
+    previous: '前のページへ'
+    next: '次のページへ'
   time:
     formats:
       default: '%Y/%m/%d %H:%M:%S'
