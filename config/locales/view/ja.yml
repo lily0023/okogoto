@@ -16,6 +16,10 @@ ja:
       default: '%Y/%m/%d %H:%M:%S'
       short: '%m/%d %H:%M'
       date: '%Y/%m/%d'
+  top_pages:
+    top:
+      to_posts_index: 'みんなのオコゴトを見てみる'
+      to_create_user: '登録してオコゴトを投稿する'
   users:
     new: 
       title: 'ユーザー登録'

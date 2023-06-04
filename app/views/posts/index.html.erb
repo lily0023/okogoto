@@ -1,31 +1,30 @@
-<div class="bg-white py-6 sm:py-8 lg:py-12">
-  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <!-- text - start -->
-    <div class="mb-10 md:mb-16">
-      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl"><%= t('.title') %></h2>
+<section class="bg-base-100 body-font">
+  <div class="container px-5 py-12 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-secondary"><%= t('.title') %></h1>
       <div class="form-control">
         <div class="input-group justify-center">
           <%= form_with scope: :search, url: posts_path, method: :get, local: true do |f| %>
             <%= f.label :tag_id, t('defaults.search_tag'), class: 'label text-slate-500 text-sm' %>
-            <%= f.collection_select(:tag_id, @tags, :id, :situation, { include_blank: t('.search_tag') }, { class: 'select join-item' }) %>
-            <%= f.button class: 'btn join-item' do %>
-              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            <%= f.collection_select(:tag_id, @tags, :id, :situation, { include_blank: t('.search_tag') }, { class: 'select join-item bg-primary text-white' }) %>
+            <%= f.button class: 'btn btn-primary join-item mt-1 pb-1' do %>
+              <i class="fa-solid fa-magnifying-glass fa-lg text-white"></i>
             <% end %>
           <% end %>
         </div>
       </div>
       <% if !@posts.present? %>
-        <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg mt-20"><%= t('.no_result') %></p>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-primary mt-12"><%= t('.no_result') %></p>
       <% end %>
     </div>
-    <div class="grid gap-6 sm:grid-cols-2">
+    <div class="flex flex-wrap">
       <% if @posts.present? %>
         <%= render @posts %>
       <% end %>
     </div>
-    <div class="flex justify-center mt-4">
-      <%= link_to_prev_page @posts, t('defaults.previous'), class: 'inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
-      <%= link_to_next_page @posts, t('defaults.next'), class: 'inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'%>
+    <div class="flex justify-center mt-10">
+      <%= link_to_prev_page @posts, t('defaults.previous'), class: 'inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
+      <%= link_to_next_page @posts, t('defaults.next'), class: 'inline-flex items-center px-4 py-2 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'%>
     </div>
   </div>
-</div>
+</section>

@@ -1,13 +1,9 @@
 <% if post.liked_by?(current_user) %>
   <%= link_to post_like_path(current_user.likes.find_by(post_id: post.id), post_id: post.id), data: { turbo_method: :delete } do %>
-    <div class="tooltip tooltip-open tooltip-right tooltip-primary" data-tip="<%= post.likes.size %>">
-      <button class="btn btn-sm btn-primary"><i class="fa-solid fa-face-smile mr-1"></i><%= Like.model_name.human %></button>
-    </div>
+    <button class="btn btn-sm btn-primary text-white"><i class="fa-solid fa-face-smile mr-1"></i><%= Like.model_name.human %> <%= post.likes.size %></button>
   <% end %>
 <% else %>
   <%= link_to post_likes_path(post), data: { turbo_method: :post } do %>
-    <div class="tooltip tooltip-open tooltip-right tooltip-primary" data-tip="<%= post.likes.count %>">
-      <button class="btn btn-sm btn-outline btn-primary"><i class="fa-regular fa-face-smile mr-1"></i><%= Like.model_name.human %></button>
-    </div>
+    <button class="btn btn-sm btn-outline btn-primary"><i class="fa-regular fa-face-smile mr-1"></i><%= Like.model_name.human %> <%= post.likes.size %></button>
   <% end %>
 <% end %>

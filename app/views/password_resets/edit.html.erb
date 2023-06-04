@@ -1,25 +1,25 @@
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"><%= t('.title') %></h1>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-secondary"><%= t('.title') %></h1>
     </div>
     <div class="flex justify-center">
       <%= form_with model: @user, url: password_reset_path(@token), local: true, class: 'flex-col' do |f| %>
         <%= render 'shared/error_messages', object: @user %>
         <div class="relative flex-grow w-full">
-          <%= f.label :email, class: 'leading-7 text-sm text-gray-600' %>
-          <p class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><%= @user.email %></p>
+          <%= f.label :email, class: 'leading-7 text-sm text-secondary' %>
+          <p class="w-full bg-primary rounded border border-primary text-white outline-none py-1 px-3 leading-8"><%= @user.email %></p>
         </div>
         <div class="relative flex-grow w-full">
-          <%= f.label :password, class: 'leading-7 text-sm text-gray-600' %>
-          <%= f.password_field :password, class: 'w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out' %>
+          <%= f.label :password, class: 'leading-7 text-sm text-secondary' %>
+          <%= f.password_field :password, class: 'w-full bg-primary text-white rounded border border-primary focus:border-primary focus:bg-primary focus:ring-2 focus:ring-primary outline-none py-1 px-3 leading-8' %>
         </div>
         <div class="relative flex-grow w-full">
-          <%= f.label :password_confirmation, class: 'leading-7 text-sm text-gray-600' %>
-          <%= f.password_field :password_confirmation, class: 'w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out' %>
+          <%= f.label :password_confirmation, class: 'leading-7 text-sm text-secondary' %>
+          <%= f.password_field :password_confirmation, class: 'w-full text-white bg-primary rounded border border-primary focus:border-primary focus:bg-primary focus:ring-2 focus:ring-primary outline-none py-1 px-3 leading-8' %>
         </div>
         <div class="relative flex-grow w-full">
-          <%= f.submit t('.submit'), class: 'btn w-full bg-indigo-500 border-0 text-white hover:bg-indigo-600 rounded-lg mt-6' %>
+          <%= f.submit t('.submit'), class: 'btn btn-secondary w-full border-0 text-white rounded-lg mt-6' %>
         </div>
       <% end %>
     </div>

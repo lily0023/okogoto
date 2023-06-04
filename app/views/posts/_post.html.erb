@@ -1,10 +1,13 @@
-<%= link_to post_path(post), class: 'group relative flex h-80 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg' do %>
-  <%= image_tag post.kogoto_image.url, class: 'absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110' %>
-  <div class="relative flex flex-col">
-    <div class="text-gray-200"><%= post.user.name %>(<%= post.user.age_i18n %><%= post.user.gender_i18n %>)</div>
-    <div class="text-lg font-semibold text-white lg:text-xl"><%= l post.created_at, format: :short %></div>
-    <div class="chat chat-start">
-      <div class="chat-bubble bg-base-200 text-gray-400"><i class="fa-regular fa-face-smile mr-1"></i><%= post.likes.size %></div>
+<%= link_to post_path(post), class: 'lg:w-1/3 sm:w-1/2 w-full p-4' do %>
+  <div class="flex relative w-full">
+    <%= image_tag post.kogoto_image.url, class: 'absolute inset-0 w-full h-full object-cover object-center' %>
+    <div class="px-8 py-10 relative z-10 w-full border-4 border-primary bg-white opacity-0 hover:opacity-100">
+      <h2 class="tracking-widest text-sm title-font font-medium text-primary mb-1"><%=post.user.name %></h2>
+      <h1 class="title-font text-lg font-medium text-gray-400 mb-3"><%= l post.created_at, format: :short %></h1>
+      <div class="chat chat-end">
+        <div class="chat-bubble bg-primary text-white"><i class="fa-regular fa-face-smile mr-1"></i><%= post.likes.size %></div>
+      </div>
+      <p class="leading-relaxed"></p>
     </div>
   </div>
 <% end %>

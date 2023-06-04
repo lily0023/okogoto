@@ -1,37 +1,37 @@
 <div class="flex justify-center">
-  <div class="card w-96 bg-base-100 shadow-xl">
+  <div class="card w-96 bg-base-100 shadow-xl my-10">
     <div class="card-body">
-      <h1 class="card-title justify-center"><%= t('.title') %></h1>
+      <h1 class="card-title justify-center text-secondary"><%= t('.title') %></h1>
       <%= form_with model: @user, url: profile_path, local: true, class: 'flex-col' do |f| %>
         <%= render 'shared/error_messages', object: @user %>
         <div class="form-control">
-          <%= f.label :name, class: 'label' %>
-          <%= f.text_field :name, class: 'input input-bordered w-full max-w-xs' %>
+          <%= f.label :name, class: 'label text-secondary' %>
+          <%= f.text_field :name, class: 'input input-primary input-bordered bg-primary text-white w-full max-w-xs' %>
         </div>
         <div class="form-control">
-          <%= f.label :age, class: 'label' %>
-          <%= f.select :age, User.ages_i18n.invert.to_a, {}, class: 'select select-bordered select-sm w-full max-w-xs mb-2' %>
+          <%= f.label :age, class: 'label text-secondary' %>
+          <%= f.select :age, User.ages_i18n.invert.to_a, {}, class: 'select select-primary select-bordered bg-primary select-sm w-full max-w-xs mb-2 text-white' %>
         </div>
         <div class="form-control space-x-2 space-y-2">
-          <%= f.label :gender %>
+          <%= f.label :gender, class: 'label text-secondary' %>
           <label class="flex justify-start cursor-pointer">
-            <%= f.radio_button :gender, :others, class: 'radio checked:bg-red-500 radio-sm', checked: true %>
-            <%= f.label :gender, User.genders_i18n[:others], value: :others, class: 'label-text font-mono ml-2 cursor-pointer' %>
+            <%= f.radio_button :gender, :others, class: 'radio checked:bg-primary radio-sm', checked: true %>
+            <%= f.label :gender, User.genders_i18n[:others], value: :others, class: 'label-text text-primary font-mono ml-2 cursor-pointer' %>
           </label>
           <label class="flex justify-start cursor-pointer">
-            <%= f.radio_button :gender, :male, class: 'radio checked:bg-red-500 radio-sm' %>
-            <%= f.label :gender, User.genders_i18n[:male], value: :male, class: 'label-text font-mono ml-2 cursor-pointer' %>
+            <%= f.radio_button :gender, :male, class: 'radio checked:bg-primary radio-sm' %>
+            <%= f.label :gender, User.genders_i18n[:male], value: :male, class: 'label-text text-primary font-mono ml-2 cursor-pointer' %>
           </label>
           <label class="flex justify-start cursor-pointer ">
-            <%= f.radio_button :gender, :female, class: 'radio checked:bg-red-500 radio-sm' %>
-            <%= f.label :gender, User.genders_i18n[:female], value: :female, class: 'label-text font-mono ml-2 cursor-pointer' %>
+            <%= f.radio_button :gender, :female, class: 'radio checked:bg-primary radio-sm' %>
+            <%= f.label :gender, User.genders_i18n[:female], value: :female, class: 'label-text text-primary font-mono ml-2 cursor-pointer' %>
           </label>
         </div>
-        <div class="card-actions justify-center mt-3">
-          <%= f.submit t('.submit'), class: 'btn btn-primary rounded-full' %>
+        <div class="card-actions justify-center mt-6">
+          <%= f.submit t('.submit'), class: 'btn btn-secondary text-white rounded-full' %>
         </div>
       <% end %>
-      <%= link_to t('.to_my_page'), profile_path, data: { turbo_confirm: t('.back_check') }, class: 'link link-primary flex justify-center' %>
+      <%= link_to t('.to_my_page'), profile_path, data: { turbo_confirm: t('.back_check') }, class: 'link link-secondary flex justify-center mt-2' %>
     </div>
   </div>
 </div>

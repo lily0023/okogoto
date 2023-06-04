@@ -4,50 +4,57 @@
                   twitter: { card: 'summary_large_image' }) %>
 <div class="flex justify-center">
   <div class="card w-96 bg-base-100 shadow-xl my-12">
-    <div class="flex justify-around">
-      <p class="text-lg text-slate-400 pt-2"><%= @post.user.name %>(<%= @post.user.age_i18n %><%= @post.user.gender_i18n %>)</p>
+    <div class="flex justify-around mt-4">
+      <p class="text-lg text-primary pt-2 ml-2"><%= @post.user.name %></br>（<%= @post.user.age_i18n %> , <%= @post.user.gender_i18n %>）</p>
       <% if current_user %>
-        <div class="dropdown dropdown-right dropdown-end">
-          <label tabindex="0" class="btn btn-ghost"><i class="fa-regular fa-circle-down text-slate-400"></i></label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-64 whitespace-nowrap">
+        <details class="dropdown dropdown-end md:dropdown-right">
+          <summary tabindex="0" class="btn btn-ghost"><i class="fa-regular fa-circle-down text-slate-400"></i></summary>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary text-white rounded-box w-72 whitespace-nowrap">
               <li><%= link_to 'オコゴト画像をダウンロード', download_post_path(@post), data: { turbolinks: false }, method: :get %></li>
-              <div class="tooltip tooltip-bottom tooltip-info" data-tip="sorry...頑張って準備中です!!">
+              <div class="tooltip tooltip-bottom tooltip-open tooltip-info" data-tip="sorry...頑張って準備中です!!">
                 <li><%= button_to 'スマホ壁紙verをダウンロード', '#' %></li>
               </div>
             </ul>
-        </div>
+        </details>
       <% end %>
     </div>
     <figure class="px-10">
       <%= image_tag @post.kogoto_image_url %>
     </figure>
-    <div class="text-right text-gray-400 pr-10"><%= l @post.created_at, format: :short %></div>
+    <div class="text-right text-primary pr-10"><%= l @post.created_at, format: :short %></div>
     <div class="card-body items-center text-center">
-      <h3 class="card-title"><%= Post.human_attribute_name('comment') %></h3>
-      <p><%= @post.comment %></p>
+      <h3 class="card-title text-primary text-left"><%= Post.human_attribute_name('comment') %></h3>
+      <p class="text-gray-500"><%= @post.comment %></p>
       <% if @post.tag_id.present? %>
-        <h3 class="card-title"><%= Tag.model_name.human %></h3>
+        <h3 class="card-title text-primary"><%= Tag.model_name.human %></h3>
         <%= link_to "# #{@post.tag.situation}", posts_path( search: { tag_id: @post.tag_id }), class: 'link link-accent' %>
       <% end %>
     </div>
     <% if current_user %>
       <div class="flex justify-around">
-        <%= link_to "https://twitter.com/share?text=#{@post.user.name}さんのオコゴト%0a%20%23Okogoto%20%23オコゴト%0a&url=https://okogoto.net/posts/#{@post.id}", target: '_blank' do %>
-          <button class="btn btn-sm btn-outline bg-[#1da1f2] text-white"><i class="fa-brands fa-twitter mr-1"></i>tweet</button>
-        <% end %>
+        <div class="md:tooltip md:tooltip-bottom md:tooltip-accent" data-tip="投稿にうまく画像が表示されないときは、お手数ですが何度かチャレンジしていただけるとうまくいきます ; ;">
+          <%= link_to "https://twitter.com/share?text=#{@post.user.name}さんのオコゴト%0a%20%23Okogoto%20%23オコゴト%0a&url=https://okogoto.net/posts/#{@post.id}", target: '_blank' do %>
+            <button class="btn btn-sm btn-accent text-white"><i class="fa-brands fa-twitter mr-1"></i>tweet</button>
+          <% end %>
+        </div>
         <%= turbo_frame_tag 'like_button' do %>
           <%= render 'like_button', post: @post %>
         <% end %>
       </div>
-      <div class="items-center text-center mb-4">
-        <% if @post.user_id == current_user.id %>
-          <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary whitespace-nowrap rounded-full text-center mt-4' %>
-          <%= button_to t('.delete'), post_path(@post),
-                                    class: 'btn btn-outline whitespace-nowrap rounded-full text-center mt-2',
-                                    method: :delete,
-                                    data: { turbo_confirm: t('.delete_check') } %>
-        <% end %>
-      </div>
+      <% if @post.user_id == current_user.id %>
+        <div class="items-center text-center mt-8">
+          <%= link_to t('.edit'), edit_post_path(@post), class: 'btn btn-primary text-white whitespace-nowrap rounded-full text-center mt-4' %>
+        </div>
+        <div class="items-center text-center mt-3 mb-8">
+          <%= link_to t('.delete'), post_path(@post),
+                                    class: 'btn btn-primary text-primary btn-outline whitespace-nowrap rounded-full text-center mt-2',
+                                    data: { turbo_method: :delete, turbo_confirm: t('.delete_check') } %>
+        </div>
+      <% end %>
+    <% else %>
+      <span class="text-primary inline-flex lg:ml-auto md:ml-0 ml-auto leading-none text-sm mr-6 mb-4">
+        <i class="fa-regular fa-face-smile mr-1"></i><%= @post.likes.size %>
+      </span>
     <% end %>
   </div>
 </div>

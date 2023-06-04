@@ -1,49 +1,50 @@
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-6">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"><%= t('.title') %></h1>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-secondary"><%= t('.title') %></h1>
     </div>
     <div class="flex md:w-1/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 py-2 items-end">
       <div class="relative flex-grow w-full">
-        <h3 class="text-md text-sky-600 whitespace-nowrap ml-4"><%= User.human_attribute_name('name') %></h3>
+        <h3 class="text-md text-primary whitespace-nowrap ml-4"><%= User.human_attribute_name('name') %></h3>
       </div>
       <div class="relative flex-grow w-full">
-        <h3 class="text-2xl text-sky-600 whitespace-nowrap ml-6"><%= @user.name %></h3>
-      </div>
-    </div>
-    <div class="flex md:w-1/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 py-2 items-end">
-      <div class="relative flex-grow w-full">
-        <h3 class="text-md text-sky-600 whitespace-nowrap ml-4"><%= User.human_attribute_name('age') %></h3>
-      </div>
-      <div class="relative flex-grow w-full">
-        <h3 class="text-2xl text-sky-600 whitespace-nowrap ml-6"><%= @user.age_i18n %></h3>
+        <h3 class="text-2xl text-secondary whitespace-nowrap ml-6"><%= @user.name %></h3>
       </div>
     </div>
     <div class="flex md:w-1/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 py-2 items-end">
       <div class="relative flex-grow w-full">
-        <h3 class="text-md text-sky-600 whitespace-nowrap ml-4"><%= User.human_attribute_name('gender') %></h3>
+        <h3 class="text-md text-primary whitespace-nowrap ml-4"><%= User.human_attribute_name('age') %></h3>
       </div>
       <div class="relative flex-grow w-full">
-        <h3 class="text-2xl text-sky-600 whitespace-nowrap ml-6"><%= @user.gender_i18n %></h3>
+        <h3 class="text-2xl text-secondary whitespace-nowrap ml-6"><%= @user.age_i18n %></h3>
       </div>
     </div>
     <div class="flex md:w-1/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 py-2 items-end">
       <div class="relative flex-grow w-full">
-        <h3 class="text-md text-sky-600 whitespace-nowrap ml-4"><%= User.human_attribute_name('email') %></h3>
+        <h3 class="text-md text-primary whitespace-nowrap ml-4"><%= User.human_attribute_name('gender') %></h3>
       </div>
       <div class="relative flex-grow w-full">
-        <h3 class="text-2xl text-sky-600 whitespace-nowrap ml-6"><%= @user.email %></h3>
+        <h3 class="text-2xl text-secondary whitespace-nowrap ml-6"><%= @user.gender_i18n %></h3>
+      </div>
+    </div>
+    <div class="flex md:w-1/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 py-2 items-end">
+      <div class="relative flex-grow w-full">
+        <h3 class="text-md text-primary whitespace-nowrap ml-4"><%= User.human_attribute_name('email') %></h3>
+      </div>
+      <div class="relative flex-grow w-full">
+        <h3 class="text-2xl text-secondary whitespace-nowrap ml-6"><%= @user.email %></h3>
       </div>
     </div>
     <div class="flex justify-center mt-4">
-      <%= link_to t('.edit_profile'), edit_profile_path, class: 'btn rounded-full' %>
+      <%= link_to t('.edit_profile'), edit_profile_path, class: 'btn btn-secondary text-white rounded-full' %>
     </div>
     <% if @posts.present? %>
+      <p class="text-primary text-center text-xl mt-12">〜 あなたの投稿 〜</p>
       <%= render partial: 'my_posts', collection: @posts, as: :item %>
     <% end %>
     <div class="flex justify-center join">
-      <%= link_to_prev_page @posts, t('defaults.previous'), class: 'inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
-      <%= link_to_next_page @posts, t('defaults.next'), class: 'inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
+      <%= link_to_prev_page @posts, t('defaults.previous'), class: 'inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-primary bg-base-100 border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
+      <%= link_to_next_page @posts, t('defaults.next'), class: 'inline-flex items-center px-4 py-2 text-sm font-medium text-primary bg-base-100 border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
     </div>
   </div>
 </section>
