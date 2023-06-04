@@ -8,6 +8,7 @@ class KakugenImage
   FONT_SIZE = 80
   INDENTION_COUNT = 16
   ROW_LIMIT = 5
+  BETWEEN_LINES = 4
 
   def self.build(okogoto)
     text = prepare_text(okogoto)
@@ -18,6 +19,7 @@ class KakugenImage
       config.gravity GRAVITY
       config.pointsize FONT_SIZE
       config.draw "text #{TEXT_POSITION} '#{text}'"
+      config.interline_spacing BETWEEN_LINES
     end
     image
   end
