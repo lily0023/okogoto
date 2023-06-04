@@ -1,5 +1,22 @@
-<footer class="footer p-5 bg-neutral text-neutral-content">
-  <%= link_to '利用規約', '#', class: 'link link-hover' %>
-  <%= link_to 'プライバシーポリシー', '#', class: 'link link-hover' %>
-  <%= link_to 'お問い合わせ', '#', class: 'link link-hover' %>
+<footer class="text-gray-600 body-font bg-info">
+  <div class="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <span class="ml-3 text-xl text-primary">Okogoto</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">2023 Okogoto —
+      <a href="https://twitter.com/cherry_00023" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@cherry_00023</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <%= link_to '利用規約', '#', class: 'link link-hover my-1 text-gray-500' %>
+    </span>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+      <%= link_to 'プライバシーポリシー', '#', class: 'link link-hover my-1 text-gray-500' %>
+    </span>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+      <%= link_to 'お問い合わせ', 'https://twitter.com/cherry_00023', class: 'link link-hover my-1 text-gray-500', target: '_blank' %>
+      <a href="https://twitter.com/cherry_00023" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">
+        <i class="fa-brands fa-twitter pt-2 text-primary"></i>
+      </a>
+    </span>
+  </div>
 </footer>
