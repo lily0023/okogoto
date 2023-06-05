@@ -31,7 +31,7 @@
       <% end %>
     </div>
     <% if current_user %>
-      <div class="flex justify-around">
+      <div class="flex justify-around mb-6">
         <div class="md:tooltip md:tooltip-bottom md:tooltip-accent" data-tip="投稿にうまく画像が表示されないときは、お手数ですが何度かチャレンジしていただけるとうまくいきます ; ;">
           <%= link_to "https://twitter.com/share?text=#{@post.user.name}さんのオコゴト%0a%20%23Okogoto%20%23オコゴト%0a&url=https://okogoto.net/posts/#{@post.id}", target: '_blank' do %>
             <button class="btn btn-sm btn-accent text-white"><i class="fa-brands fa-twitter mr-1"></i>tweet</button>
