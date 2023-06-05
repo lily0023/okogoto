@@ -1,12 +1,12 @@
 <div class="navbar bg-secondary text-white">
   <div class="flex-1">
-    <%= link_to image_tag('Okogoto_logo.png', size: '110'), root_path, class: 'ml-4' %>
+    <%= link_to image_tag('Okogoto_logo.png', size: '110'), posts_path, class: 'ml-4' %>
   </div>
   <div class="flex-none">
     <% if logged_in? %>
       <details class="dropdown dropdown-end mr-2">
         <summary tabindex="0" class="btn btn-ghost m-1"><i class="fa-solid fa-bars fa-lg"></i></summary>
-        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-secondary whitespace-nowrap rounded-box w-60 hover:bg-">
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-secondary text-neutral whitespace-nowrap rounded-box w-60 hover:bg-">
           <li><%= link_to 'みんなのオコゴトを見る', posts_path %></li>
           <li><%= link_to 'オコゴト画像を作成する', new_okogoto_image_path %></li>
           <li><%= link_to 'マイページ', profile_path %></li>
