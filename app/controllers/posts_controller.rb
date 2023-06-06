@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
-  before_action :set_my_post, only: %i[edit update destroy]
+  before_action :set_my_post, only: %i[new create edit update destroy]
   before_action :set_post, only: %i[show download]
   def index
     @tags = Tag.all
@@ -9,6 +9,19 @@ class PostsController < ApplicationController
              else
                Post.all.includes(:user, :tag, :likes).order(created_at: :desc).page(params[:page]).per(6)
              end
+  end
+
+  def new
+    @tags = Tag.all
+  end
+
+  def create
+    if @post.update(post_params)
+      redirect_to post_path(@post), flash: { success: t('.success') }
+    else
+      flash.now[:error] = t('.fail')
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def show; end
@@ -33,7 +46,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    if request.referer&.include?('/posts') && request.referer&.include?('/edit')
+    if request.referer&.include?('/posts') && request.referer&.include?('/new')
       redirect_to new_okogoto_image_path, status: :see_other
     else
       flash[:success] = t('.success')

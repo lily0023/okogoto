@@ -19,8 +19,7 @@ class OkogotoImagesController < ApplicationController
                         FriendsImage.build(okogoto)
                       end
       @post = current_user.posts.new(kogoto_image: okogoto_image)
-      @post.save
-      redirect_to edit_post_path(@post), flash: { success: t('.success') }
+      redirect_to new_post_path(id: @post.id), flash: { success: t('.success') } if @post.save
     end
   end
 
