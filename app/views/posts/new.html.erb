@@ -3,7 +3,7 @@
     <div class="card-body">
       <h2 class="text-secondary"><%= t('.created_image') %></h2>
       <%= image_tag @post.kogoto_image.url %>
-      <%= form_with model: @post, local: true, class: 'flex-col' do |f| %>
+      <%= form_with model: @post, url: posts_path(id: @post.id), local: true, class: 'flex-col' do |f| %>
         <div class="form-control">
           <%= f.label :comment, class: 'label text-secondary' %>
           <%= f.text_area :comment, class: 'textarea textarea-primary textarea-bordered text-white bg-primary placeholder-white', placeholder: t('.comment') %>
@@ -11,11 +11,14 @@
         <%= f.label :tag_id, Tag.model_name.human, class: 'label text-secondary' %>
         <%= f.collection_select(:tag_id, @tags, :id, :situation, { prompt: t('.tag') }, { class: 'select select-primary text-white bg-primary select-bordered select-sm w-full max-w-xs mb-2' }) %>
         <div class="card-actions justify-center mt-3">
-          <%= f.submit t('.post_edit'), class: 'btn btn-secondary text-white rounded-full' %>
+          <%= f.submit t('.post_create'), class: 'btn btn-secondary text-white rounded-full' %>
         </div>
       <% end %>
       <div class="flex justify-center">
-        <%= link_to t('.back_page'), post_path(@post), class: 'btn btn-primary btn-outline whitespace-nowrap rounded-full mt-2' %>
+        <%= button_to t('.delete_post'), post_path(@post),
+                                        class: 'btn btn-primary btn-outline whitespace-nowrap rounded-full mt-2',
+                                        method: :delete,
+                                        data: { turbo_confirm: t('.delete_check') } %>
       </div>
     </div>
   </div>

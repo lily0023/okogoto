@@ -3,7 +3,6 @@ ja:
     register: '登録'
     login: 'ログイン'
     logout: 'ログアウト'
-    post_create: 'オコゴト画像を投稿する'
     require_login: 'ログインしてください'
     search_tag: 'タグで検索する'
     reset_password: 'パスワードの変更申請を受け付けました'
@@ -56,15 +55,23 @@ ja:
       title: 'みんなのオコゴト'
       no_result: '最初のオコゴトを投稿してみませんか？'
       search_tag: 'どんな状況のオコゴトを見てみますか？'
-    edit:
+    new:
       created_image: '作成したオコゴト画像'
       delete_post: '画像作成からやり直す'
-      tag: 'どんな時に生まれたオコゴトですか？'
       comment: '画像をみた感想やこのオコゴトを生んだあなたの経験を教えてください。'
+      tag: 'どんな時に生まれたオコゴトですか？'
+      post_create: '説明を追加する'
       delete_check: '現在のオコゴト画像は削除してもいいですか？'
+    create:
+      success: 'オコゴト画像に説明を追加しました！'
+      fail: '説明の追加に失敗しました。'
+    edit:
+      created_image: '作成したオコゴト画像'
+      back_page: '投稿の編集をやめる'
+      post_edit: '投稿を更新する'
     update:
-      success: 'オコゴト画像に説明を追加しました'
-      fail: '説明の追加に失敗しました'
+      success: '投稿を更新しました！'
+      fail: '投稿の更新に失敗しました'
     show:
       edit: '投稿を編集する'
       delete: '投稿を削除する'
@@ -81,7 +88,7 @@ ja:
       friends: 'まるで友達からの応援な雰囲気'
       submit: 'オコゴト画像を作成する'
     create:
-      success: 'オコゴト画像を作成しました'
+      success: 'オコゴト画像を作成して投稿しました！オコゴト画像について教えてくれませんか？'
       fail: 'オコゴト画像が作成できませんでした'
   password_resets:
     create:
