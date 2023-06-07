@@ -5,13 +5,20 @@ class PostsController < ApplicationController
   def index
     @tags = Tag.all
     @posts = if search_params[:tag_id].present?
-               Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag, :likes).order(created_at: :desc).page(params[:page]).per(6)
+               Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag,
+                                                                   :likes).order(created_at: :desc).page(params[:page]).per(6)
              else
                Post.all.includes(:user, :tag, :likes).order(created_at: :desc).page(params[:page]).per(6)
              end
   end
 
+  def show; end
+
   def new
+    @tags = Tag.all
+  end
+
+  def edit
     @tags = Tag.all
   end
 
@@ -24,15 +31,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def show; end
-
   def download
     data = URI.open("https://okogoto.s3.ap-northeast-1.amazonaws.com/#{@post.kogoto_image.path}", 'r')
     send_data data.read, filename: 'okogoto.png'
-  end
-
-  def edit
-    @tags = Tag.all
   end
 
   def update
