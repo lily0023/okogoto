@@ -1,23 +1,25 @@
-class FriendsImage
+class KogotoImageCreator
   require 'mini_magick'
 
-  BASE_IMAGE_PATH = './app/assets/images/okogoto_friends.png'.freeze
+  BASE_IMAGE_PATH = './app/assets/images/okogoto_kogoto.png'.freeze
   GRAVITY = 'center'.freeze
-  TEXT_POSITION = '320,-30'.freeze
-  FONT = './app/assets/fonts/Senobi-Gothic-Regular.ttf'.freeze
-  FONT_SIZE = 85
-  INDENTION_COUNT = 10
-  ROW_LIMIT = 7
+  TEXT_POSITION = '30,-70'.freeze
+  FONT = './app/assets/fonts/kanjuku-Gothic.otf'.freeze
+  FONT_SIZE = 75
+  INDENTION_COUNT = 16
+  ROW_LIMIT = 5
+  BETWEEN_LINES = 4
 
   def self.build(okogoto)
     text = prepare_text(okogoto)
     image = MiniMagick::Image.open(BASE_IMAGE_PATH)
     image.combine_options do |config|
       config.font FONT
-      config.fill '#FFCF25'
+      config.fill '#545454'
       config.gravity GRAVITY
       config.pointsize FONT_SIZE
       config.draw "text #{TEXT_POSITION} '#{text}'"
+      config.interline_spacing BETWEEN_LINES
     end
     image
   end

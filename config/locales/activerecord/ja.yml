@@ -20,6 +20,13 @@ ja:
         kogoto_image: 'オコゴト画像'
         id: 'ID'
         created_at: '作成日時'
+  activemodel:
+    models:
+      okogoto_image: 'オコゴト画像'
+    attributes:
+      okogoto_image:
+        okogoto: 'オコゴト'
+        image: 'オコゴトの雰囲気'
   enums:
     user:
       age:
