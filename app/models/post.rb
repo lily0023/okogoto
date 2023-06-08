@@ -34,4 +34,8 @@ class Post < ApplicationRecord
   def liked_by?(user)
     likes.exists?(user_id: user.id)
   end
+
+  def okogoto_image_data
+    URI.open("https://okogoto.s3.ap-northeast-1.amazonaws.com/#{self.kogoto_image.path}", 'r')
+  end
 end

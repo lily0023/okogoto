@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def download
-    data = URI.open("https://okogoto.s3.ap-northeast-1.amazonaws.com/#{@post.kogoto_image.path}", 'r')
+    data = @post.okogoto_image_data
     send_data data.read, filename: 'okogoto.png'
   end
 
