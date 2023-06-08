@@ -2,25 +2,17 @@ class PostsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   before_action :set_my_post, only: %i[new create edit update destroy]
   before_action :set_post, only: %i[show download]
+  before_action :set_tag_all, only: %i[index new edit]
   def index
-    @tags = Tag.all
-    @posts = if search_params[:tag_id].present?
-               Post.where(tag_id: search_params[:tag_id]).includes(:user, :tag,
-                                                                   :likes).order(created_at: :desc).page(params[:page]).per(6)
-             else
-               Post.all.includes(:user, :tag, :likes).order(created_at: :desc).page(params[:page]).per(6)
-             end
+    tag = search_params[:tag_id]
+    @posts = Post.search_tag(tag).include.recent.page(params[:page]).per(6)
   end
 
   def show; end
 
-  def new
-    @tags = Tag.all
-  end
+  def new; end
 
-  def edit
-    @tags = Tag.all
-  end
+  def edit; end
 
   def create
     if @post.update(post_params)
@@ -71,5 +63,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def set_tag_all
+    @tags = Tag.all
   end
 end
