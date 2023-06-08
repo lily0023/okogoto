@@ -31,7 +31,15 @@ class Post < ApplicationRecord
   validates :comment, length: { maximum: 1000 }
   validates :kogoto_image, presence: true
 
+  scope :search_tag, -> (tag){ tag.present? ? where(tag_id: tag) : all }
+  scope :include, -> { includes(:user, :tag, :likes) }
+  scope :recent, -> { order(created_at: :desc) }
+
   def liked_by?(user)
     likes.exists?(user_id: user.id)
+  end
+
+  def okogoto_image_data
+    URI.open("https://okogoto.s3.ap-northeast-1.amazonaws.com/#{self.kogoto_image.path}", 'r')
   end
 end

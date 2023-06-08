@@ -1,4 +1,4 @@
-class KakugenImage
+class KakugenImageCreator
   require 'mini_magick'
 
   BASE_IMAGE_PATH = './app/assets/images/okogoto_kakugen.png'.freeze

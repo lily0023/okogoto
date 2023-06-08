@@ -4,6 +4,7 @@
       <div class="card-body">
         <h1 class="card-title justify-center text-secondary"><%= t('.title') %></h1>
         <%= form_with url: okogoto_images_path, local: true, class: 'flex-col' do |f| %>
+          <%= render 'shared/error_messages', object: @okogoto_image %>
           <div class="form-control mb-4">
             <%= f.label t('.okogoto'), class: 'label text-secondary' %>
             <%= f.text_area :okogoto, class: 'textarea textarea-primary bg-primary text-white placeholder-white', placeholder: '70文字以内で入力してください（ 70文字以上入力されません ）', maxlength: '70' %>
