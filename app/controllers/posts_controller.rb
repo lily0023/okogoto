@@ -4,8 +4,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show download]
   before_action :set_tag_all, only: %i[index new edit]
   def index
-    tag = search_params[:tag_id]
-    @posts = Post.search_tag(tag).include.recent.page(params[:page]).per(6)
+    @posts = Post.search_tag(search_params[:tag_id]).include.recent.page(params[:page]).per(6)
   end
 
   def show; end
