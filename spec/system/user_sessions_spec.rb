@@ -11,7 +11,7 @@ RSpec.describe 'UserSessions', type: :system do
     context 'フォームが未入力' do
       it 'ログイン処理が失敗する' do
         visit login_path
-        fill_in 'メールアドレス', with: user.email, match: :first
+        fill_in 'メールアドレス', with: nil, match: :first
         fill_in 'パスワード', with: nil
         click_button 'ログイン'
         expect(page).to have_content 'ログインに失敗しました'
