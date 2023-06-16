@@ -14,7 +14,7 @@
         </div>
         <div class="form-control">
           <%= f.label :age, class: 'label text-secondary' %>
-          <%= f.select :age, User.ages_i18n.invert.to_a, {}, class: 'select select-primary bg-primary text-white select-bordered select-sm w-full max-w-xs mb-2', placeholder: 'みんなに公開されます' %>
+          <%= f.select :age, User.ages_i18n.invert.to_a, {}, class: 'select select-primary bg-primary text-white select-bordered select-sm w-full max-w-xs mb-2' %>
         </div>
         <div class="form-control space-x-2 space-y-2">
           <%= f.label :gender, class: 'label text-secondary' %>
