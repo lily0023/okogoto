@@ -1,4 +1,5 @@
-<% set_meta_tags( og: { title: "#{@post.user.name}さんの作成したオコゴト画像",
+<% set_meta_tags( title: "#{@post.user.name}さんのオコゴト",
+                  og: { title: "#{@post.user.name}さんの作成したオコゴト画像",
                         image: @post.kogoto_image_url,
                         url: "https://okogoto.net/posts/#{@post.id}" },
                   twitter: { card: 'summary_large_image' }) %>
