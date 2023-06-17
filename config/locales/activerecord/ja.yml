@@ -40,3 +40,6 @@ ja:
         others: 'その他'
         male: '男性'
         female: '女性'
+      role:
+        general: '一般ユーザー'
+        admin: '管理者'
