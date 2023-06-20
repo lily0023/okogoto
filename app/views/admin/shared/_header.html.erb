@@ -1,0 +1,20 @@
+<div class="navbar bg-primary text-white">
+  <div class="flex-1">
+    <%= link_to 'Okogoto', root_path, class: 'font-sans font-bold text-white text-2xl ml-4' %>
+  </div>
+  <div class="flex-none">
+    <% if logged_in? %>
+      <details class="dropdown dropdown-end mr-2">
+        <summary tabindex="0" class="btn btn-ghost m-1" id="header-menu"><i class="fa-solid fa-bars fa-lg"></i></summary>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary text-white whitespace-nowrap rounded-box w-60">
+          <li><%= link_to 'ユーザー', '#' %></li>
+          <li><%= link_to '投稿', '#' %></li>
+          <li><%= link_to 'タグ', '#' %></li>
+          <li><%= button_to t('defaults.logout'), logout_path, method: :delete %></li>
+        </ul>
+      </details>
+    <% else %>
+      <%= link_to 'Okogotoのログインページへ', login_path, class: 'link link-hover text-white' %>
+    <% end %>
+  </div>
+</div>
