@@ -26,6 +26,9 @@
                                 class: 'btn btn-primary text-primary btn-outline whitespace-nowrap rounded-full text-center mt-2',
                                 data: { turbo_method: :delete, turbo_confirm: t('.delete_check') } %>
     </div>
+    <div class="items-center text-center mt-3 mb-8">
+      <%= link_to t('.to_posts_index'), admin_posts_path, class: 'link link-primary' %>
+    </div>
   </div>
 </div>
 

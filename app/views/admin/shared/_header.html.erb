@@ -1,6 +1,6 @@
 <div class="navbar bg-primary text-white">
   <div class="flex-1">
-    <%= link_to 'Okogoto', admin_posts_path, class: 'font-sans font-bold text-white text-2xl ml-4' %>
+    <%= link_to 'Okogoto', admin_root_path, class: 'font-sans font-bold text-white text-2xl ml-4' %>
   </div>
   <div class="flex-none">
     <% if logged_in? %>
@@ -9,7 +9,7 @@
         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary text-white whitespace-nowrap rounded-box w-60">
           <li><%= link_to 'ユーザー', admin_users_path %></li>
           <li><%= link_to '投稿', admin_posts_path %></li>
-          <li><%= link_to 'タグ', '#' %></li>
+          <li><%= link_to 'タグ', admin_tags_path %></li>
           <li><%= button_to t('defaults.logout'), admin_logout_path, method: :delete %></li>
         </ul>
       </details>
