@@ -110,3 +110,14 @@ ja:
         fail: 'ログインに失敗しました'
       destroy:
         success: 'ログアウトしました。アップデート頑張れよ〜〜！'
+    posts:
+      index:
+        title: '投稿一覧'
+        search_tag: 'タグを選択'
+        no_result: '投稿ナイヨ'
+      show:
+        delete: '投稿を削除する'
+        delete_check: '投稿を削除しますか？'
+      destroy:
+        success: '投稿を削除しました'
+
