@@ -1,0 +1,18 @@
+<tr class="text-gray-700 dark:text-gray-400">
+  <td class="px-4 py-3">
+    <div>
+      <p class="font-semibold"><%= tag.situation %></p>
+    </div>
+  </td>
+  <td class="px-4 py-3 text-sm">
+    <%= tag.posts.size %>
+  </td>
+  <td class="px-4 py-3 text-sm">
+    <%= l tag.created_at, format: :short %>
+  </td>
+  <td class="px-4 py-3 text-sm">
+    <%= link_to t('defaults.delete'), admin_tag_path(tag),
+                                      class: 'btn btn-primary btn-sm text-primary btn-outline whitespace-nowrap rounded text-center',
+                                      data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_check') } %>
+  </td>
+</tr>

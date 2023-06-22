@@ -10,6 +10,9 @@ ja:
     submit: '登録する'
     previous: '前のページへ'
     next: '次のページへ'
+    not_authorized: '管理者権限がありません'
+    delete: '削除'
+    delete_check: '本当に削除していいですか？'
   time:
     formats:
       default: '%Y/%m/%d %H:%M:%S'
@@ -29,7 +32,6 @@ ja:
       fail: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
-      title: 'ログイン'
       create_user: '新しくアカウントを作成する'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れですか？'
@@ -99,3 +101,35 @@ ja:
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
+  admin:
+    user_sessions:
+      new:
+        title: '管理者ログイン'
+        not_admin: '管理者ではない方はこちらから'
+        not_admin_login: '通常ログインページへ'
+      create:
+        success: '管理者としてログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました。アップデート頑張れよ〜〜！'
+    posts:
+      index:
+        title: '投稿一覧'
+        search_tag: 'タグを選択'
+        no_result: '投稿ナイヨ'
+      show:
+        delete: '投稿を削除する'
+        delete_check: '投稿を削除しますか？'
+        to_posts_index: '投稿一覧へ戻る'
+      destroy:
+        success: '投稿を削除しました'
+    tags:
+      index:
+        title: 'タグ一覧'
+        add_tag: 'タグ追加'
+      create:
+        success: 'タグを追加しました'
+        fail: 'タグが追加できませんでした'
+      destroy:
+        success: 'タグを削除しました'
+

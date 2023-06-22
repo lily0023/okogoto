@@ -1,0 +1,25 @@
+<tr class="text-gray-700 dark:text-gray-400">
+  <td class="px-4 py-3">
+    <div class="flex items-center text-sm">
+      <div>
+        <p class="font-semibold"><%= user.name %></p>
+        <p class="text-xs text-gray-600 dark:text-gray-400">
+          <%= user.age_i18n %>,<%= user.gender_i18n %>
+        </p>
+      </div>
+    </div>
+  </td>
+  <td class="px-4 py-3 text-sm">
+    <%= user.posts.size %>
+  </td>
+  <td class="px-4 py-3 text-sm">
+    <%= user.email %>
+  </td>
+  <td class="px-4 py-3 text-xs">
+    <%= user.role_i18n %>
+    </span>
+  </td>
+  <td class="px-4 py-3 text-sm">
+    <%= l user.created_at, format: :short %>
+  </td>
+</tr>

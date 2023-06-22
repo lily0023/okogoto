@@ -1,0 +1,33 @@
+<div class="flex justify-center">
+  <div class="card w-96 bg-base-100 shadow-xl my-12">
+    <div class="flex justify-around mt-4">
+      <p class="text-lg text-primary pt-2 ml-2"><%= @post.user.name %></br>（<%= @post.user.age_i18n %> , <%= @post.user.gender_i18n %>）</p>
+    </div>
+    <figure class="px-10">
+      <%= image_tag @post.kogoto_image_url %>
+    </figure>
+    <div class="text-right text-primary pr-10"><%= l @post.created_at, format: :short %></div>
+    <div class="card-body items-center text-center">
+      <% if @post.comment.present? %>
+        <h3 class="card-title text-primary text-left"><%= Post.human_attribute_name('comment') %></h3>
+        <p class="text-gray-500"><%= @post.comment %></p>
+      <% end %>
+      <% if @post.tag_id.present? %>
+        <h3 class="card-title text-primary"><%= Tag.model_name.human %></h3>
+        <%= link_to "# #{@post.tag.situation}", posts_path( search: { tag_id: @post.tag_id }), class: 'link link-accent' %>
+      <% else %>
+        <h3 class="card-title text-primary"><%= Tag.model_name.human %></h3>
+        <%= link_to "# オコゴト", posts_path, class: 'link link-accent' %>
+      <% end %>
+    </div>
+    <div class="items-center text-center mt-3 mb-8">
+      <%= link_to t('.delete'), admin_post_path(@post),
+                                class: 'btn btn-primary text-primary btn-outline whitespace-nowrap rounded-full text-center mt-2',
+                                data: { turbo_method: :delete, turbo_confirm: t('.delete_check') } %>
+    </div>
+    <div class="items-center text-center mt-3 mb-8">
+      <%= link_to t('.to_posts_index'), admin_posts_path, class: 'link link-primary' %>
+    </div>
+  </div>
+</div>
+
