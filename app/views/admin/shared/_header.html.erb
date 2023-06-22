@@ -7,10 +7,10 @@
       <details class="dropdown dropdown-end mr-2">
         <summary tabindex="0" class="btn btn-ghost m-1" id="header-menu"><i class="fa-solid fa-bars fa-lg"></i></summary>
         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary text-white whitespace-nowrap rounded-box w-60">
-          <li><%= link_to 'ユーザー', '#' %></li>
+          <li><%= link_to 'ユーザー', admin_users_path %></li>
           <li><%= link_to '投稿', '#' %></li>
           <li><%= link_to 'タグ', '#' %></li>
-          <li><%= button_to t('defaults.logout'), logout_path, method: :delete %></li>
+          <li><%= button_to t('defaults.logout'), admin_logout_path, method: :delete %></li>
         </ul>
       </details>
     <% else %>
