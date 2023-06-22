@@ -26,12 +26,10 @@
         </tbody>
       </table>
     </div>
-    <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
+    <div class="flex justify-center px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t bg-gray-50 sm:grid-cols-9">
       <!-- Pagination -->
-      <div class="flex justify-center">
-        <%= link_to_prev_page @users, t('defaults.previous'), class: 'inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
-        <%= link_to_next_page @users, t('defaults.next'), class: 'inline-flex items-center px-4 py-2 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'%>
-      </div>
+      <%= link_to_prev_page @users, t('defaults.previous'), class: 'inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
+      <%= link_to_next_page @users, t('defaults.next'), class: 'inline-flex items-center px-4 py-2 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'%>
     </div>
   </div>
 </div>
