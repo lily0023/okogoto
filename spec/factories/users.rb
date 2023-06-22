@@ -25,10 +25,18 @@
 FactoryBot.define do
   factory :user do
     sequence(:email){ |n| "user_#{n}@example.com" }
-    name{ 'user' }
+    name { 'user' }
     age { :twenties }
     gender { :female }
     password {'password'}
     password_confirmation{'password'}
+
+    trait :general do
+      role { :general }
+    end
+
+    trait :admin do
+      role { :admin }
+    end
   end
 end
