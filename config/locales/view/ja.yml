@@ -11,6 +11,8 @@ ja:
     previous: '前のページへ'
     next: '次のページへ'
     not_authorized: '管理者権限がありません'
+    delete: '削除'
+    delete_check: '本当に削除していいですか？'
   time:
     formats:
       default: '%Y/%m/%d %H:%M:%S'
@@ -118,6 +120,16 @@ ja:
       show:
         delete: '投稿を削除する'
         delete_check: '投稿を削除しますか？'
+        to_posts_index: '投稿一覧へ戻る'
       destroy:
         success: '投稿を削除しました'
+    tags:
+      index:
+        title: 'タグ一覧'
+        add_tag: 'タグ追加'
+      create:
+        success: 'タグを追加しました'
+        fail: 'タグが追加できませんでした'
+      destroy:
+        success: 'タグを削除しました'
 

@@ -20,6 +20,8 @@ ja:
         kogoto_image: 'オコゴト画像'
         id: 'ID'
         created_at: '作成日時'
+      tag:
+        situation: '状況'
   activemodel:
     models:
       okogoto_image: 'オコゴト画像'

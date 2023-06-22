@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     delete 'logout', to: 'user_sessions#destroy'
     resources :users, only: %i[index show destroy]
     resources :posts, only: %i[index show destroy]
-    resources :tags, only: %i[index new create edit update destroy]
+    resources :tags, only: %i[index create destroy]
   end
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?

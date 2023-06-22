@@ -1,0 +1,45 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+    <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+      <h1 class="title-font font-medium text-3xl text-gray-900 text-center mb-4"><%= t('.title') %></h1>
+      <div class="container grid px-6 mx-auto">
+        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+          <div class="w-full overflow-x-auto">
+            <table class="w-full whitespace-no-wrap">
+              <thead>
+                <tr
+                  class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50"
+                >
+                  <th class="px-4 py-3">Situation</th>
+                  <th class="px-4 py-3">Number of posts</th>
+                  <th class="px-4 py-3">Date</th>
+                  <th class="px-4 py-3">delete</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                <%= render @tags %>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
+            <!-- Pagination -->
+            <div class="flex justify-center">
+              <%= link_to_prev_page @tags, t('defaults.previous'), class: 'inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
+              <%= link_to_next_page @tags, t('defaults.next'), class: 'inline-flex items-center px-4 py-2 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+      <h2 class="text-gray-900 text-lg font-medium title-font mb-5"><%= t('.add_tag') %></h2>
+      <%= form_with model: @tag, url: admin_tags_path, method: :post do |f| %>
+        <div class="relative mb-4">
+          <%= f.label :situation, Tag.human_attribute_name(:situation), class: 'leading-7 text-sm text-gray-600' %>
+          <%= f.text_field :situation, class: 'w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out' %>
+        </div>
+        <%= f.submit t('defaults.submit'), class: 'text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg' %>
+      <% end %>
+    </div>
+  </div>
+</section>
