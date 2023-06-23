@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :require_login, only: %i[index show]
+  before_action :require_login, only: %i[new edit create download update destroy]
   before_action :set_my_post, only: %i[new create edit update destroy]
   before_action :set_post, only: %i[show download]
   before_action :set_tag_all, only: %i[index new edit]
