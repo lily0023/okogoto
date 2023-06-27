@@ -69,7 +69,7 @@ gem 'kaminari'
 gem 'high_voltage', '~> 3.1'
 
 # サイトマップ
-gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3'
 gem 'sitemap_generator'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
