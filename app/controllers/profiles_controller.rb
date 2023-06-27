@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :require_login
   before_action :set_user
   def show
     @posts = @user.posts.includes(:tag, :likes).order(created_at: :desc).page(params[:page]).per(3)

@@ -1,4 +1,5 @@
 class Admin::BaseController < ApplicationController
+  before_action :require_login
   layout 'admin/layouts/application'
   before_action :check_admin
 

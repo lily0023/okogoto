@@ -1,4 +1,5 @@
 class OkogotoImagesController < ApplicationController
+  before_action :require_login
   def new
     @post = Post.new
     @okogoto_image = OkogotoImage.new

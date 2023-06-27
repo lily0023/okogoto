@@ -14,6 +14,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   private
+
   def search_params
     params.fetch(:search, {}).permit(:tag_id)
   end
