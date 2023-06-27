@@ -32,5 +32,7 @@ Rails.application.routes.draw do
     resources :tags, only: %i[index create destroy]
   end
 
+  get '/sitemap', to: redirect("https://s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/sitemaps/sitemap.xml.gz")
+
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
