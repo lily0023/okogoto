@@ -54,7 +54,6 @@ gem 'enum_help'
 gem 'rails-i18n', '~> 7.0.0'
 
 # kogoto画像作成
-gem 'aws-sdk-s3', require: false
 gem 'carrierwave'
 gem 'dotenv-rails'
 gem 'fog-aws'
@@ -68,6 +67,10 @@ gem 'kaminari'
 
 # 静的ページ
 gem 'high_voltage', '~> 3.1'
+
+# サイトマップ
+gem 'aws-sdk-s3', require: false
+gem 'sitemap_generator'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
