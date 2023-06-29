@@ -12,9 +12,7 @@
           <summary tabindex="0" class="btn btn-ghost"><i class="fa-regular fa-circle-down text-slate-500"></i></summary>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary text-white rounded-box w-72 whitespace-nowrap">
               <li><%= link_to 'オコゴト画像をダウンロード', download_post_path(@post), data: { turbolinks: false }, method: :get %></li>
-              <div class="tooltip tooltip-bottom tooltip-open tooltip-info" data-tip="sorry...頑張って準備中です!!">
-                <li><%= button_to 'スマホ壁紙verをダウンロード', '#' %></li>
-              </div>
+              <li><%= link_to 'スマホ壁紙verをダウンロード', mobile_download_post_path(@post), data: {turbolinks: false}, method: :get %></li>
             </ul>
         </details>
       <% end %>

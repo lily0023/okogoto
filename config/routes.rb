@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :likes, only: %i[create destroy]
     member do
       get 'download'
+      get 'mobile_download'
     end
   end
   patch 'posts', to: 'posts#create'
