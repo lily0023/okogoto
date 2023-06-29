@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :require_login, only: %i[new edit create download update destroy]
   before_action :set_my_post, only: %i[new create edit update destroy]
-  before_action :set_post, only: %i[show download]
+  before_action :set_post, only: %i[show download mobile_download]
   before_action :set_tag_all, only: %i[index new edit]
   def index
     @posts = Post.search_tag(search_params[:tag_id]).include.recent.page(params[:page]).per(6)
@@ -25,6 +25,11 @@ class PostsController < ApplicationController
   def download
     data = @post.okogoto_image_data
     send_data data.read, filename: 'okogoto.png'
+  end
+
+  def mobile_download
+    image = @post.make_mobile_wallpaper
+    send_data image, filename: 'July_okogoto_calendar.png'
   end
 
   def update

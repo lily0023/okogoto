@@ -42,4 +42,8 @@ class Post < ApplicationRecord
   def okogoto_image_data
     URI.open("https://okogoto.s3.ap-northeast-1.amazonaws.com/#{kogoto_image.path}", 'r')
   end
+
+  def make_mobile_wallpaper(image: self.kogoto_image)
+    MobileWallpaperCreator.build(image).tempfile.open.read
+  end
 end
