@@ -1,16 +1,16 @@
 <% set_meta_tags( title: 'Okogotoへようこそ！' ) %>
 <section class="bg-base-100">
   <div class="container mx-auto flex px-5 py-24 flex-col items-center">
-    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+    <div class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center">
       <%= image_tag 'okogoto_explanation.png', size: '720x600' %>
     </div>
-    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-      <h1 class="title-font sm:text-2xl text-xl mb-4 font-medium text-primary text-left">Okogotoでは
+    <div class="text-center lg:w-2/3 w-full">
+      <h1 class="title-font sm:text-2xl text-xl mb-4 font-medium text-primary text-center">Okogotoでは
         <br class="lg:inline-block">背景やフォントを使って
         <br class="lg:inline-block">あなたの言葉の雰囲気を変え
         <br class="lg:inline-block">客観的に見ることをお手伝いします
       </h1>
-      <div class="collapse bg-info mt-6 rounded-3xl">
+      <div class=" collapse bg-info mt-6 rounded-3xl">
         <input type="checkbox" /> 
         <div class="collapse-title text-lg font-medium text-primary">
           <i class="fa-solid fa-play text-primary mx-1"></i>
@@ -36,16 +36,16 @@
         <%= link_to t('.to_posts_index'), posts_path, class: 'btn btn-secondary rounded-full text-white' %>
       </div>
       <h1 class="title-font sm:text-2xl text-xl my-4 font-medium text-neutral">オコゴト画像のつくりかた</h1>
-      <div class="chat chat-start">
+      <div class="chat chat-start md:ml-44 xl:ml-64">
         <div class="chat-bubble chat-bubble-primary whitespace-nowrap w-80 text-white">1. オコゴトを入力</div>
       </div>
-      <div class="chat chat-start">
+      <div class="chat chat-start md:ml-44 xl:ml-64">
         <div class="chat-bubble chat-bubble-primary whitespace-nowrap w-80 text-white">2. 見てみたい雰囲気の画像を選択</div>
       </div>
-      <div class="chat chat-start">
+      <div class="chat chat-start md:ml-44 xl:ml-64">
         <div class="chat-bubble chat-bubble-primary whitespace-nowrap w-80 text-white">3. オコゴト画像に説明を追加</div>
       </div>
-      <div class="chat chat-start">
+      <div class="chat chat-start md:ml-36 xl:ml-56">
         <div class="chat-bubble chat-bubble-primary whitespace-nowrap w-96 text-white">
           <i class="fa-regular fa-circle-check mr-1"></i>
           投稿された画像はダウンロード可能です！
@@ -66,7 +66,7 @@
           7月のカレンダーです
         </div>
       </div>
-      <div class="mockup-window border border-secondary w-1/2 mt-4">
+      <div class="mockup-window border border-secondary md:w-1/2 mt-4">
         <div class="flex justify-center border-t border-secondary">
           <%= image_tag 'desctop_example.png', class: 'object-cover' %>
         </div>
