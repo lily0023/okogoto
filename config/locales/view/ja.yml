@@ -78,6 +78,7 @@ ja:
       edit: '投稿を編集する'
       delete: '投稿を削除する'
       delete_check: '投稿を削除しますか？'
+      back_before_page: 'みんなのオコゴトへもどる'
     destroy:
       success: '投稿を削除しました'
   okogoto_images:
