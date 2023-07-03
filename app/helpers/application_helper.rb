@@ -24,4 +24,20 @@ module ApplicationHelper
       }
     }
   end
+
+  def back_before_page
+    if request.referer&.include?('/edit') || request.referer&.include?('/new')
+      link_to t('defaults.back_before_page'), posts_path
+    elsif request.referer&.include?('/posts')
+      link_to :back do
+        t('defaults.back_before_page')
+      end
+    elsif request.referer&.include?('/profile')
+      link_to :back do
+        t('defaults.back_before_mypage')
+      end
+    else
+      link_to t('defaults.back_before_page'), posts_path
+    end
+  end
 end

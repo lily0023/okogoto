@@ -13,6 +13,9 @@ ja:
     not_authorized: '管理者権限がありません'
     delete: '削除'
     delete_check: '本当に削除していいですか？'
+    back_before_page: 'みんなのオコゴトへもどる'
+    back_before_mypage: 'マイページへもどる'
+
   time:
     formats:
       default: '%Y/%m/%d %H:%M:%S'
@@ -71,6 +74,7 @@ ja:
       created_image: '作成したオコゴト画像'
       back_page: '投稿の編集をやめる'
       post_edit: '投稿を更新する'
+      comment: '画像をみた感想やこのオコゴトを生んだあなたの経験を教えてください。'
     update:
       success: '投稿を更新しました！'
       fail: '投稿の更新に失敗しました'
@@ -78,7 +82,6 @@ ja:
       edit: '投稿を編集する'
       delete: '投稿を削除する'
       delete_check: '投稿を削除しますか？'
-      back_before_page: 'みんなのオコゴトへもどる'
     destroy:
       success: '投稿を削除しました'
   okogoto_images:
