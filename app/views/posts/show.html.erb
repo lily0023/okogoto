@@ -71,6 +71,15 @@
       <% end %>
     </button>
   </div>
+<% elsif request.referer&.include?('/profile') %>
+  <div class="flex justify-center">
+    <button class="btn btn btn-primary text-white mb-12">
+      <%= link_to :back do %>
+        <i class="fa-solid fa-chevron-left mr-1"></i>
+        <%= t('.back_before_mypage') %>
+      <% end %>
+    </button>
+  </div>
 <% else %>
   <div class="flex justify-center">
     <button class="btn btn btn-primary text-white mb-12">
