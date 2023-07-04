@@ -24,7 +24,7 @@ ja:
   top_pages:
     top:
       to_posts_index: 'みんなのオコゴトを見てみる'
-      to_create_user: '登録してオコゴトを投稿する'
+      to_create_user: '登録してオコゴト画像をつくってみる'
   users:
     new: 
       title: 'ユーザー登録'
@@ -60,6 +60,7 @@ ja:
       title: 'みんなのオコゴト'
       no_result: '最初のオコゴトを投稿してみませんか？'
       search_tag: 'どんな状況のオコゴトを見てみますか？'
+      to_create_user: '登録してオコゴト画像をつくってみる'
     new:
       created_image: '作成したオコゴト画像'
       delete_post: '画像作成からやり直す'

@@ -27,5 +27,10 @@
       <%= link_to_prev_page @posts, t('defaults.previous'), class: 'inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' %>
       <%= link_to_next_page @posts, t('defaults.next'), class: 'inline-flex items-center px-4 py-2 text-sm font-medium text-primary bg-white border border-primary rounded-lg hover:bg-gray-100 hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'%>
     </div>
+    <% if !logged_in? %>
+      <div class="flex justify-center mt-12">
+        <%= link_to t('.to_create_user'), new_user_path, class: 'btn btn-primary btn-lg rounded-full text-white' %>
+      </div>
+    <% end %>
   </div>
 </section>
