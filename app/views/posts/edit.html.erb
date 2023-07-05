@@ -1,22 +1,22 @@
 <% set_meta_tags( title: 'オコゴトの解説を編集' ) %>
 <div class="flex justify-center">
-  <div class="card w-96 bg-base-100 shadow-xl my-12">
+  <div class="card w-96 bg-base-100 shadow-xl my-12 outline-dashed outline-gray-300">
     <div class="card-body">
       <h2 class="text-secondary"><%= t('.created_image') %></h2>
       <%= image_tag @post.kogoto_image.url %>
       <%= form_with model: @post, local: true, class: 'flex-col' do |f| %>
         <div class="form-control">
           <%= f.label :comment, class: 'label text-secondary' %>
-          <%= f.text_area :comment, class: 'textarea textarea-primary textarea-bordered text-white bg-primary placeholder-white', placeholder: t('.comment') %>
+          <%= f.text_area :comment, class: 'textarea textarea-primary textarea-bordered text-primary border-dashed placeholder-primary', placeholder: t('.comment') %>
         </div>
         <%= f.label :tag_id, Tag.model_name.human, class: 'label text-secondary' %>
-        <%= f.collection_select(:tag_id, @tags, :id, :situation, { prompt: t('.tag') }, { class: 'select select-primary text-white bg-primary select-bordered select-sm w-full max-w-xs mb-2' }) %>
-        <div class="card-actions justify-center mt-3">
+        <%= f.collection_select(:tag_id, @tags, :id, :situation, { prompt: t('.tag') }, { class: 'select select-primary text-primary border-dashed select-bordered select-sm w-full max-w-xs mb-2' }) %>
+        <div class="card-actions justify-center mt-6">
           <%= f.submit t('.post_edit'), class: 'btn btn-secondary text-white rounded-full' %>
         </div>
       <% end %>
       <div class="flex justify-center">
-        <%= link_to t('.back_page'), post_path(@post), class: 'btn btn-primary btn-outline whitespace-nowrap rounded-full mt-2' %>
+        <%= link_to t('.back_page'), post_path(@post), class: 'btn btn-primary btn-outline border-dashed whitespace-nowrap rounded-full mt-2' %>
       </div>
     </div>
   </div>

@@ -43,19 +43,8 @@
       <p class="text-primary text-mono text-xl my-2"><i class="fa-solid fa-2 fa-sm mr-2"></i> 見てみたい雰囲気の画像を選択</>
       <p class="text-primary text-mono text-xl my-2"><i class="fa-solid fa-3 fa-sm mr-2"></i> オコゴト画像に説明を追加</div>
       <p class="underline underline-offset-8 decoration-dashed text-primary text-mono md:text-xl text-md mt-10">
-        <i class="fa-regular fa-circle-check fa-lg mr-1"></i>
+        <i class="fa-regular fa-circle-down fa-lg mr-1 mb-8"></i>
         投稿された画像はダウンロード可能です！
-      </p>
-      <div class="mockup-phone border-secondary mt-6">
-        <div class="camera"></div> 
-        <div class="display">
-          <div class="artboard artboard-demo phone-1">
-            <%= image_tag 'introduction_calendar.png', class: 'object-cover' %>
-          </div>
-        </div>
-      </div>
-      <p class="text-primary text-mono text-center text-xl mt-5 mb-12">
-        スマホver壁紙は7月のカレンダーです
       </p>
       <div class="mockup-window border border-secondary md:w-1/2 mt-4">
         <div class="flex justify-center border-t border-secondary">
@@ -65,7 +54,18 @@
       <p class="text-primary text-mono text-center text-xl mt-5 mb-12">
         ダウンロードした画像はパソコンの壁紙にもできます
       </p>
-      <div class="flex justify-center mt-8">
+      <div class="mockup-phone border-secondary mt-6">
+        <div class="camera"></div> 
+        <div class="display">
+          <div class="artboard artboard-demo phone-1">
+            <%= image_tag 'introduction_calendar.png', class: 'object-cover' %>
+          </div>
+        </div>
+      </div>
+      <p class="text-primary text-mono text-center text-xl mt-5 mb-8">
+        スマホver壁紙は7月のカレンダーです
+      </p>
+      <div class="flex justify-center mt-2">
         <%= link_to t('.to_create_user'), new_user_path, class: 'btn btn-secondary btn-lg rounded-full text-white' %>
       </div>
       <div class="flex justify-center my-8">

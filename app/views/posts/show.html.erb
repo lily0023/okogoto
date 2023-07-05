@@ -4,20 +4,20 @@
                         url: "https://okogoto.net/posts/#{@post.id}" },
                   twitter: { card: 'summary_large_image' }) %>
 <div class="flex justify-center">
-  <div class="card w-96 bg-base-100 shadow-xl my-12">
+  <div class="card w-96 bg-base-100 shadow-xl my-12 outline-dashed outline-gray-300">
     <div class="flex justify-around mt-4">
       <p class="text-lg text-primary pt-2 ml-2"><%= @post.user.name %></br>（<%= @post.user.age_i18n %> , <%= @post.user.gender_i18n %>）</p>
       <% if current_user %>
         <details class="dropdown dropdown-end md:dropdown-right">
-          <summary tabindex="0" class="btn btn-ghost"><i class="fa-regular fa-circle-down text-slate-500"></i></summary>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary text-white rounded-box w-72 whitespace-nowrap">
+          <summary tabindex="0" class="btn btn-ghost btn-lg"><i class="fa-regular fa-circle-down text-primary"></i></summary>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary text-white divide-y divide-white divide-dashed rounded-box w-72 whitespace-nowrap">
               <li><%= link_to 'オコゴト画像をダウンロード', download_post_path(@post), data: { turbolinks: false }, method: :get %></li>
               <li><%= link_to 'スマホ壁紙verをダウンロード', mobile_download_post_path(@post), data: {turbolinks: false}, method: :get %></li>
             </ul>
         </details>
       <% end %>
     </div>
-    <figure class="px-10">
+    <figure class="px-10 py-4">
       <%= image_tag @post.kogoto_image_url %>
     </figure>
     <div class="text-right text-primary pr-10"><%= l @post.created_at, format: :short %></div>
@@ -51,7 +51,7 @@
         </div>
         <div class="items-center text-center mt-3 mb-8">
           <%= link_to t('.delete'), post_path(@post),
-                                    class: 'btn btn-primary text-primary btn-outline whitespace-nowrap rounded-full text-center mt-2',
+                                    class: 'btn btn-primary text-primary btn-outline border-dashed whitespace-nowrap rounded-full text-center mt-2',
                                     data: { turbo_method: :delete, turbo_confirm: t('.delete_check') } %>
         </div>
       <% end %>

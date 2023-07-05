@@ -2,12 +2,12 @@
 <section class="bg-base-100 body-font">
   <div class="container px-5 py-12 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-secondary"><%= t('.title') %></h1>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-secondary underline decoration-dashed underline-offset-8"><%= t('.title') %></h1>
       <div class="form-control">
         <div class="input-group justify-center">
           <%= form_with scope: :search, url: posts_path, method: :get, local: true do |f| %>
-            <%= f.label :tag_id, t('defaults.search_tag'), class: 'label text-slate-500 text-sm' %>
-            <%= f.collection_select(:tag_id, @tags, :id, :situation, { include_blank: t('.search_tag') }, { class: 'select join-item bg-primary text-white' }) %>
+            <%= f.label :tag_id, t('defaults.search_tag'), class: 'label text-slate-500 text-sm mt-4' %>
+            <%= f.collection_select(:tag_id, @tags, :id, :situation, { include_blank: t('.search_tag') }, { class: 'select select-primary join-item text-primary border-dashed border-primary' }) %>
             <%= f.button class: 'btn btn-primary join-item mt-1 pb-1' do %>
               <i class="fa-solid fa-magnifying-glass fa-lg text-white"></i>
             <% end %>
