@@ -1,20 +1,20 @@
 <% set_meta_tags( title: t('defaults.login') ) %>
-<section class="text-gray-600 body-font bg-base-100">
+<section class="body-font bg-base-100">
   <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
     <div class="text-center lg:w-2/3 w-full">
       <h1 class="title-font sm:text-5xl text-3xl mb-4 font-bold text-secondary">Login</h1>
     </div>
-    <div class="card max-w-sm md:w-1/2 w-5/6 mb-10 shadow-2xl bg-base-100">
+    <div class="card max-w-sm md:w-1/2 w-5/6 mb-10 shadow-2xl bg-base-100 outline-dashed outline-gray-300">
       <div class="card-body">
         <div class="form-control">
           <%= form_with url: login_path, method: :post do |f| %>
             <div class="form-control">
               <%= f.label :email, User.human_attribute_name(:email), class: 'label text-secondary' %>
-              <%= f.email_field :email, class: 'input input-bordered input-primary w-full max-w-xs bg-primary text-white placeholder-white', placeholder: 'email' %>
+              <%= f.email_field :email, class: 'input input-primary border-dashed w-full max-w-xs text-primary placeholder-primary', placeholder: 'okogoto@example.com' %>
             </div>
             <div class="form-control">
               <%= f.label :password, User.human_attribute_name(:password), class: 'label text-secondary' %>
-              <%= f.password_field :password, class: 'input input-primary input-bordered w-full max-w-xs bg-primary text-white placeholder-white', placeholder: 'password' %>
+              <%= f.password_field :password, class: 'input input-primary border-dashed w-full max-w-xs text-primary placeholder-primary', placeholder: 'password' %>
             </div>
             <div class="form-control mt-8">
               <%= f.submit t('defaults.login'), class: 'btn btn-secondary text-white border-0' %>
@@ -29,8 +29,8 @@
         <%= render 'forgot_password_form' %>
       </div>
     </div>
-    <div class="text-center lg:w-2/3 w-full mt-8">
-      <p class="mb-4 leading-relaxed text-secondary"><%= t('.create_user') %></p>
+    <div class="text-center lg:w-2/3 w-full mt-10">
+      <p class="mb-4 leading-relaxed text-secondary underline decoration-dashed underline-offset-8"><%= t('.create_user') %></p>
       <div class="flex justify-center">
         <%= link_to t('.to_register_page'), new_user_path, class: 'btn btn-secondary btn-wide text-white border-0 focus:outline-none rounded-lg text-sm' %>
       </div>

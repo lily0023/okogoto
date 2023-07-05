@@ -2,16 +2,16 @@
 <div class="flex justify-center">
   <div class="card w-96 bg-base-100 shadow-xl my-10">
     <div class="card-body">
-      <h1 class="card-title justify-center text-secondary"><%= t('.title') %></h1>
+      <h1 class="card-title justify-center text-secondary underline decoration-secondary decoration-dashed underline-offset-8 mb-4"><%= t('.title') %></h1>
       <%= form_with model: @user, url: profile_path, local: true, class: 'flex-col' do |f| %>
         <%= render 'shared/error_messages', object: @user %>
         <div class="form-control">
           <%= f.label :name, class: 'label text-secondary' %>
-          <%= f.text_field :name, class: 'input input-primary input-bordered bg-primary text-white w-full max-w-xs' %>
+          <%= f.text_field :name, class: 'input input-primary input-bordered text-primary border-dashed w-full max-w-xs' %>
         </div>
         <div class="form-control">
           <%= f.label :age, class: 'label text-secondary' %>
-          <%= f.select :age, User.ages_i18n.invert.to_a, {}, class: 'select select-primary select-bordered bg-primary select-sm w-full max-w-xs mb-2 text-white' %>
+          <%= f.select :age, User.ages_i18n.invert.to_a, {}, class: 'select select-primary select-bordered text-primary border-dashed select-sm w-full max-w-xs mb-2' %>
         </div>
         <div class="form-control space-x-2 space-y-2">
           <%= f.label :gender, class: 'label text-secondary' %>
@@ -28,7 +28,7 @@
             <%= f.label :gender, User.genders_i18n[:female], value: :female, class: 'label-text text-primary font-mono ml-2 cursor-pointer' %>
           </label>
         </div>
-        <div class="card-actions justify-center mt-6">
+        <div class="card-actions justify-center mt-8">
           <%= f.submit t('.submit'), class: 'btn btn-secondary text-white rounded-full' %>
         </div>
       <% end %>

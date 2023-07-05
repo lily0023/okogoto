@@ -1,7 +1,7 @@
 <div class="flex justify-center mt-2">
   <div class="p-4 lg:w-2/5">
     <%= link_to post_path(item) do %>
-      <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+      <div class="h-full border-2 border-gray-200 border-opacity-60 border-dashed rounded-lg overflow-hidden">
         <%= image_tag item.kogoto_image.url, class: 'lg:h-80 w-full object-cover object-center' %>
         <div class="p-6">
           <h2 class="tracking-widest text-xs title-font font-medium text-neutral mb-1"><%= Post.human_attribute_name('comment') %></h2>

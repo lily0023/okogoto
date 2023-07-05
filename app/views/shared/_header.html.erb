@@ -12,11 +12,11 @@
     <% if logged_in? %>
       <details class="dropdown dropdown-end mr-2">
         <summary tabindex="0" class="btn btn-ghost m-1" id="header-menu"><i class="fa-solid fa-bars fa-lg"></i></summary>
-        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-secondary text-neutral whitespace-nowrap rounded-box w-60 hover:bg-">
-          <li><%= link_to 'みんなのオコゴトを見る', posts_path %></li>
-          <li><%= link_to 'オコゴト画像を作成する', new_okogoto_image_path %></li>
-          <li><%= link_to 'マイページ', profile_path %></li>
-          <li><%= button_to t('defaults.logout'), logout_path, method: :delete %></li>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 outline-dashed outline-gray-400 text-secondary divide-y divide-dashed divide-gray-400 whitespace-nowrap rounded-box w-60">
+          <li class="hover:text-gray-500"><%= link_to 'みんなのオコゴトを見る', posts_path %></li>
+          <li class="hover:text-gray-500"><%= link_to 'オコゴト画像を作成する', new_okogoto_image_path %></li>
+          <li class="hover:text-gray-500"><%= link_to 'マイページ', profile_path %></li>
+          <li class="hover:text-gray-500"><%= button_to t('defaults.logout'), logout_path, method: :delete %></li>
         </ul>
       </details>
     <% else %>
