@@ -4,7 +4,7 @@
                         url: "https://okogoto.net/posts/#{@post.id}" },
                   twitter: { card: 'summary_large_image' }) %>
 <div class="flex justify-center">
-  <div class="card w-96 bg-base-100 shadow-xl my-12 outline-dashed outline-gray-300">
+  <div class="card md:w-96 w-5/6 bg-base-100 shadow-xl my-12 outline-dashed outline-gray-300">
     <div class="flex justify-around mt-4">
       <p class="text-lg text-primary pt-2 ml-2"><%= @post.user.name %></br>（<%= @post.user.age_i18n %> , <%= @post.user.gender_i18n %>）</p>
       <% if current_user %>
@@ -17,7 +17,7 @@
         </details>
       <% end %>
     </div>
-    <figure class="px-10 py-4">
+    <figure class="md:px-10 py-4">
       <%= image_tag @post.kogoto_image_url %>
     </figure>
     <div class="text-right text-primary pr-10"><%= l @post.created_at, format: :short %></div>
