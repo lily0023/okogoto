@@ -14,6 +14,8 @@ class OkogotoImage
       KogotoImageCreator.build(okogoto)
     when 'friends'
       FriendsImageCreator.build(okogoto)
+    when 'hitorigoto'
+      HitorigotoImageCreator.build(okogoto)
     end
   end
 end

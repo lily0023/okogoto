@@ -24,6 +24,10 @@
               <%= f.radio_button :image, 'friends', class: 'radio checked:bg-primary radio-sm' %>
               <%= f.label :image, t('.friends'), value: 'friends', class: 'label-text text-primary font-mono ml-2 cursor-pointer' %>
             </label>
+            <label class="flex justify-start cursor-pointer ">
+              <%= f.radio_button :image, 'hitorigoto', class: 'radio checked:bg-primary radio-sm' %>
+              <%= f.label :image, t('.hitorigoto'), value: 'hitorigoto', class: 'label-text text-primary font-mono ml-2 cursor-pointer' %>
+            </label>
           </div>
           <p class="mt-6 text-gray-500"><i class="fa-regular fa-hand-point-down mr-1"></i>スワイプして画像を確認</p>
           <div class="carousel carousel-center rounded-box mt-1">
@@ -35,6 +39,9 @@
             </div> 
             <div class="carousel-item">
               <%= image_tag 'okogoto_friends.png', size: '320x200' %>
+            </div> 
+            <div class="carousel-item">
+              <%= image_tag 'okogoto_hitorigoto.png', size: '320x200' %>
             </div> 
           </div>
           <div class="card-actions justify-center mt-6">
