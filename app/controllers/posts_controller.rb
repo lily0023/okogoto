@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def mobile_download
     image = @post.make_mobile_wallpaper
-    send_data image, filename: 'July_okogoto_calendar.png'
+    send_data image, filename: 'August_okogoto_calendar.png'
   end
 
   def update
