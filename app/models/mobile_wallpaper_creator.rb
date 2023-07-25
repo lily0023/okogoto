@@ -1,7 +1,7 @@
 class MobileWallpaperCreator
   require 'mini_magick'
 
-  BASE_IMAGE_PATH = './app/assets/images/July_mobile_paper.png'.freeze
+  BASE_IMAGE_PATH = './app/assets/images/August_mobile_paper.png'.freeze
 
   def self.build(okogoto_image)
     base_image = MiniMagick::Image.open(BASE_IMAGE_PATH)
@@ -10,7 +10,7 @@ class MobileWallpaperCreator
     result = base_image.composite(okogoto_image) do |c|
       c.compose 'Over'
       c.gravity 'NorthWest'
-      c.geometry '+110+300'
+      c.geometry '+110+390'
     end
     result
   end
